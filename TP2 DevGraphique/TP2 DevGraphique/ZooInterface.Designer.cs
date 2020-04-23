@@ -1,6 +1,6 @@
 ﻿namespace TP2_DevGraphique
 {
-    partial class Form1
+    partial class ZooInterface
     {
         /// <summary>
         /// Variable nécessaire au concepteur.
@@ -28,13 +28,32 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.carteJeu1 = new TP2.CarteJeu();
+            this.SuspendLayout();
+            // 
+            // carteJeu1
+            // 
+            this.carteJeu1.Location = new System.Drawing.Point(13, 0);
+            this.carteJeu1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.carteJeu1.Name = "carteJeu1";
+            this.carteJeu1.Size = new System.Drawing.Size(1323, 643);
+            this.carteJeu1.TabIndex = 0;
+            // 
+            // ZooInterface
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1335, 638);
+            this.Controls.Add(this.carteJeu1);
+            this.Name = "ZooInterface";
             this.Text = "Form1";
+            this.ResumeLayout(false);
+
         }
 
         #endregion
+
+        private TP2.CarteJeu carteJeu1;
     }
 }
 

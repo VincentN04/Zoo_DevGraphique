@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace TP2_DevGraphique
 {
-    public partial class Form1 : Form
+    public partial class ZooInterface : Form
     {
-        public Form1()
+        public ZooInterface()
         {
             InitializeComponent();
         }

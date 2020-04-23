@@ -46,14 +46,26 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="Animaux.cs" />
+    <Compile Include="CarteJeu.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CarteJeu.designer.cs">
+      <DependentUpon>CarteJeu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ZooInterface.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="ZooInterface.Designer.cs">
+      <DependentUpon>ZooInterface.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TilesetImageGenerator.cs" />
+    <Compile Include="TileVisiteur.cs" />
+    <EmbeddedResource Include="CarteJeu.resx">
+      <DependentUpon>CarteJeu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -62,7 +74,11 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="ZooInterface.resx">
+      <DependentUpon>ZooInterface.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -75,6 +91,75 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bas1.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bas2.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bas3.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\buffalo.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\coloriage-licorne1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dessin_mouton.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DessinLion.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\droite1.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\droite2.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gauche1.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gauche2.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\haut1.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\haut2.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\haut3.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hippopotame.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\licorne.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lion.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mouton.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ours.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Parchemin.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\parking-lot-clipart-drawing-4.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\personnages.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\zoo_tileset.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
