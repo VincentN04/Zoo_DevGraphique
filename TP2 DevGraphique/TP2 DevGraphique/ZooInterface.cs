@@ -16,5 +16,17 @@ namespace TP2_DevGraphique
         {
             InitializeComponent();
         }
+
+        /// <summary>
+        /// Détecte le click des touches de flèches
+        /// </summary>
+        /// <param name="msg"></param>
+        /// <param name="keyData"></param>
+        /// <returns> La touche pesée </returns>
+        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
+        {
+            carteJeu1.EvenementClick(keyData);
+            return base.ProcessCmdKey(ref msg, keyData);
+        }
     }
 }

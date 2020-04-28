@@ -53,6 +53,7 @@
     <Compile Include="CarteJeu.designer.cs">
       <DependentUpon>CarteJeu.cs</DependentUpon>
     </Compile>
+    <Compile Include="Heros.cs" />
     <Compile Include="ZooInterface.cs">
       <SubType>Form</SubType>
     </Compile>

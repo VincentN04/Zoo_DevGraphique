@@ -33,17 +33,17 @@
             // 
             // carteJeu1
             // 
-            this.carteJeu1.Location = new System.Drawing.Point(13, 0);
+            this.carteJeu1.Location = new System.Drawing.Point(13, 13);
             this.carteJeu1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.carteJeu1.Name = "carteJeu1";
-            this.carteJeu1.Size = new System.Drawing.Size(1323, 643);
+            this.carteJeu1.Size = new System.Drawing.Size(1026, 707);
             this.carteJeu1.TabIndex = 0;
             // 
             // ZooInterface
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1335, 638);
+            this.ClientSize = new System.Drawing.Size(1245, 722);
             this.Controls.Add(this.carteJeu1);
             this.Name = "ZooInterface";
             this.Text = "Form1";
