@@ -1,5 +1,5 @@
 # Zoo_DevGraphique
- travail pratique du cours de développement graphique
+ Travail pratique du cours de développement graphique
 
 ### Membres de l'équipe:
  - Clément Deffes
