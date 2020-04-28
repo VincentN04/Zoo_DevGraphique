@@ -61,7 +61,128 @@ namespace TP2
             thread.Name = "Boucle de jeu";
             thread.Start();
         }
+        internal static void Choix_Animal(MouseEventArgs e)
+        {
+            int x = e.X / 32;
+            int y = e.Y / 32;
+            Animaux anim = new Animaux();
+            anim.x = x;
+            anim.y = y;
+            CarteJeu.RegistreA[compt] = anim;
 
+            Choix_Animaux choix = new Choix_Animaux();
+            choix.Show();
+        }
+        public static void SpawnerAnimal(string choix)
+        {
+            switch (choix)
+            {
+                case "Lion":
+                    CarteJeu.RegistreA[compt].Type = "Lion";
+                    
+                    if (CarteJeu.RegistreA[compt].y > 2 && 
+                        CarteJeu.RegistreA[compt].y< 6 && CarteJeu.RegistreA[compt].x> 2 && CarteJeu.RegistreA[compt].x< 10)
+                    {
+                        if (AnimalEnclos1 != "Lion")
+                        {
+                            if (AnimalEnclos1 != null)
+                            {
+                                Sauter = true;
+                            }
+
+}
+                        else
+                        {
+                            Villageois = true;
+                            AnimalEnclos1 = CarteJeu.RegistreA[compt].Type;
+                            Sauter = false;
+                        }
+                           
+                    }
+                    if (CarteJeu.RegistreA[compt].y > 9 &&
+                        CarteJeu.RegistreA[compt].y< 13 &&
+                        CarteJeu.RegistreA[compt].x> 2 && CarteJeu.RegistreA[compt].x< 10)
+                    {
+                        AnimalEnclos3 = CarteJeu.RegistreA[compt].Type;
+                    }
+                    if (CarteJeu.RegistreA[compt].y > 2 &&
+                        CarteJeu.RegistreA[compt].y< 6 &&
+                        CarteJeu.RegistreA[compt].x> 14 && CarteJeu.RegistreA[compt].x< 22)
+                    {
+                        AnimalEnclos4 = CarteJeu.RegistreA[compt].Type;
+                    }
+                    if (CarteJeu.RegistreA[compt].y > 9 &&
+                        CarteJeu.RegistreA[compt].y< 13 &&
+                        CarteJeu.RegistreA[compt].x> 14 && CarteJeu.RegistreA[compt].x< 22)
+                    {
+                        AnimalEnclos2 = CarteJeu.RegistreA[compt].Type;
+                    }
+                   
+
+                    compt++;
+                    break;
+                case "Mouton":
+                    CarteJeu.RegistreA[compt].Type = "Mouton";
+                    if (CarteJeu.RegistreA[compt].y > 2 &&
+                        CarteJeu.RegistreA[compt].y< 6 && CarteJeu.RegistreA[compt].x> 2 && CarteJeu.RegistreA[compt].x< 10)
+                    {
+                        AnimalEnclos1 = CarteJeu.RegistreA[compt].Type;
+
+                    }
+                    if (CarteJeu.RegistreA[compt].y > 9 &&
+                        CarteJeu.RegistreA[compt].y< 13 &&
+                        CarteJeu.RegistreA[compt].x> 2 && CarteJeu.RegistreA[compt].x< 10)
+                    {
+                        AnimalEnclos3 = CarteJeu.RegistreA[compt].Type;
+                    }
+                    if (CarteJeu.RegistreA[compt].y > 2 &&
+                        CarteJeu.RegistreA[compt].y< 6 &&
+                        CarteJeu.RegistreA[compt].x> 14 && CarteJeu.RegistreA[compt].x< 22)
+                    {
+                        AnimalEnclos4 = CarteJeu.RegistreA[compt].Type;
+                    }
+                    if (CarteJeu.RegistreA[compt].y > 9 &&
+                        CarteJeu.RegistreA[compt].y< 13 &&
+                        CarteJeu.RegistreA[compt].x> 14 && CarteJeu.RegistreA[compt].x< 22)
+                    {
+                        AnimalEnclos2 = CarteJeu.RegistreA[compt].Type;
+                    }
+                    
+                    compt++;
+                    break;
+                case "Licorne":
+                    CarteJeu.RegistreA[compt].Type = "Licorne";
+                    if (CarteJeu.RegistreA[compt].y > 2 &&
+                        CarteJeu.RegistreA[compt].y< 6 && CarteJeu.RegistreA[compt].x> 2 && CarteJeu.RegistreA[compt].x< 10)
+                    {
+                        AnimalEnclos1 = CarteJeu.RegistreA[compt].Type;
+
+                    }
+                    if (CarteJeu.RegistreA[compt].y > 9 &&
+                        CarteJeu.RegistreA[compt].y< 13 &&
+                        CarteJeu.RegistreA[compt].x> 2 && CarteJeu.RegistreA[compt].x< 10)
+                    {
+                        AnimalEnclos3 = CarteJeu.RegistreA[compt].Type;
+                    }
+                    if (CarteJeu.RegistreA[compt].y > 2 &&
+                        CarteJeu.RegistreA[compt].y< 6 &&
+                        CarteJeu.RegistreA[compt].x> 14 && CarteJeu.RegistreA[compt].x< 22)
+                    {
+                        AnimalEnclos4 = CarteJeu.RegistreA[compt].Type;
+                    }
+                    if (CarteJeu.RegistreA[compt].y > 9 &&
+                        CarteJeu.RegistreA[compt].y< 13 &&
+                        CarteJeu.RegistreA[compt].x> 14 && CarteJeu.RegistreA[compt].x< 22)
+                    {
+                        AnimalEnclos2 = CarteJeu.RegistreA[compt].Type;
+                    }
+                   
+                    compt++;
+                    break;
+
+            }
+            
+        }
         /// <summary>
         /// Initialise le tableau boolean qui servira comme tableau d'obstacle pour le héros
         /// </summary>
