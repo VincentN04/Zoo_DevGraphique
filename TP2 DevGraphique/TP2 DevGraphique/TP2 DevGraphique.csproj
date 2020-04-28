@@ -66,6 +66,7 @@
       <DependentUpon>ChoixAnimaux.cs</DependentUpon>
     </Compile>
     <Compile Include="Choix_Animaux.cs" />
+    <Compile Include="Heros.cs" />
     <Compile Include="ZooInterface.cs">
       <SubType>Form</SubType>
     </Compile>
