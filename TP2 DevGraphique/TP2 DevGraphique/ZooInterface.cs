@@ -17,29 +17,7 @@ namespace TP2_DevGraphique
         {
             InitializeComponent();
         }
-        private void carteJeu2_MouseDown(object sender, MouseEventArgs e)
-        {
-            int x = e.X / 32;
-            int y = e.Y / 32;
-            switch (e.Button)
-            {
-                case MouseButtons.Left:
-                    if (ProcheHeros(e) == true)
-                    {
-                        VerifieG(e);
-                    }
-                    break;
-                case MouseButtons.Right:
-                    if (ProcheHeros(e) == true)
-                    {
-                        VerifieD(e);
-                    }
-                    break;
-
-
-
-            }
-        }
+        
 
         /// <summary>
         /// Affiche les informations de l'animal ou du visiteur
@@ -49,7 +27,7 @@ namespace TP2_DevGraphique
         {
             int x = e.X / 32;
             int y = e.Y / 32;
-            if (carteJeu2.MapObstacle[x, y] == false)
+            if (carteJeu1.MapObstacle[x, y] == false)
             {
                 if (y > 2 && y < 6 && x > 2 && x < 10 || y > 9 && y < 13 && x > 2 && x < 10 ||
                     y > 2 && y < 6 && x > 14 && x < 22 || y > 9 && y < 13 && x > 14 && x < 22)
@@ -58,6 +36,7 @@ namespace TP2_DevGraphique
                     InfoForm.Show();
                 }
             }
+            //on ne rentre jamais dedans
         }
 
         /// <summary>
@@ -68,7 +47,7 @@ namespace TP2_DevGraphique
         {
             int x = e.X / 32;
             int y = e.Y / 32;
-            if (carteJeu2.MapObstacle[x, y] == false)
+            if (carteJeu1.MapObstacle[x, y] == false)
             {
                 if (y > 2 && y < 6 && x > 2 && x < 10 || y > 9 && y < 13 && x > 2 && x < 10 ||
                     y > 2 && y < 6 && x > 14 && x < 22 || y > 9 && y < 13 && x > 14 && x < 22)
@@ -77,40 +56,41 @@ namespace TP2_DevGraphique
 
                 }
             }
+            //on ne rentre jamais dedans
 
         }
         private bool ProcheHeros(MouseEventArgs e)
         {
             bool EstHeros = false;
-            if (carteJeu2.posVer / 32 == (e.Y - 32) / 32)
+            if (carteJeu1.posVer / 32 == (e.Y - 32) / 32)
             {
                 EstHeros = true;
             }
-            if (carteJeu2.posVer / 32 == (e.Y + 32) / 32)
+            if (carteJeu1.posVer / 32 == (e.Y + 32) / 32)
             {
                 EstHeros = true;
             }
-            if (carteJeu2.posHor / 32 == (e.X - 32) / 32)
+            if (carteJeu1.posHor / 32 == (e.X - 32) / 32)
             {
                 EstHeros = true;
             }
-            if (carteJeu2.posHor / 32 == (e.X + 32) / 32)
+            if (carteJeu1.posHor / 32 == (e.X + 32) / 32)
             {
                 EstHeros = true;
             }
-            if (carteJeu2.posHor / 32 == (e.X - 32) / 32 && carteJeu2.posVer / 32 == (e.Y + 32) / 32)
+            if (carteJeu1.posHor / 32 == (e.X - 32) / 32 && carteJeu1.posVer / 32 == (e.Y + 32) / 32)
             {
                 EstHeros = true;
             }
-            if (carteJeu2.posHor / 32 == (e.X - 32) / 32 && carteJeu2.posVer / 32 == (e.Y - 32) / 32)
+            if (carteJeu1.posHor / 32 == (e.X - 32) / 32 && carteJeu1.posVer / 32 == (e.Y - 32) / 32)
             {
                 EstHeros = true;
             }
-            if (carteJeu2.posHor / 32 == (e.X + 32) / 32 && carteJeu2.posVer / 32 == (e.Y + 32) / 32)
+            if (carteJeu1.posHor / 32 == (e.X + 32) / 32 && carteJeu1.posVer / 32 == (e.Y + 32) / 32)
             {
                 EstHeros = true;
             }
-            if (carteJeu2.posHor / 32 == (e.X + 32) / 32 && carteJeu2.posVer / 32 == (e.Y - 32) / 32)
+            if (carteJeu1.posHor / 32 == (e.X + 32) / 32 && carteJeu1.posVer / 32 == (e.Y - 32) / 32)
             {
                 EstHeros = true;
             }
@@ -129,6 +109,25 @@ namespace TP2_DevGraphique
             return base.ProcessCmdKey(ref msg, keyData);
         }
 
-
+        private void carteJeu1_MouseDown(object sender, MouseEventArgs e)
+        {
+        int x = e.X / 32;
+        int y = e.Y / 32;
+        switch (e.Button)
+        {
+            case MouseButtons.Left:
+                if (ProcheHeros(e) == true)
+                {
+                    VerifieG(e);
+                }
+                break;
+            case MouseButtons.Right:
+                if (ProcheHeros(e) == true)
+                {
+                    VerifieD(e);
+                }
+                break;
+            }
+        }
     }
 }

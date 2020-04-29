@@ -26,5 +26,19 @@ namespace TP2_DevGraphique
             choix = "Mouton";
             CarteJeu.SpawnerAnimal(choix);
         }
+
+        private void pictureBox2_Click(object sender, EventArgs e) //unicorn
+        {
+            this.Close();
+            choix = "Licorne";
+            CarteJeu.SpawnerAnimal(choix);
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e) //lion
+        {
+            this.Close();
+            choix = "Lion";
+            CarteJeu.SpawnerAnimal(choix);
+        }
     }
 }

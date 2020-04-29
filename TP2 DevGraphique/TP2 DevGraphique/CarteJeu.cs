@@ -70,7 +70,7 @@ namespace TP2
             anim.y = y;
             CarteJeu.RegistreA[compt] = anim;
 
-            Choix_Animaux choix = new Choix_Animaux();
+            ChoixAnimaux choix = new ChoixAnimaux();
             choix.Show();
         }
         public static void SpawnerAnimal(string choix)
