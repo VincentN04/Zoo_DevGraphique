@@ -16,6 +16,7 @@ namespace TP2_DevGraphique
         public ZooInterface()
         {
             InitializeComponent();
+            labelJour.Text += DateTime.Today.ToString("D");
         }
         
 
@@ -36,7 +37,6 @@ namespace TP2_DevGraphique
                     InfoForm.Show();
                 }
             }
-            //on ne rentre jamais dedans
         }
 
         /// <summary>
@@ -56,7 +56,6 @@ namespace TP2_DevGraphique
 
                 }
             }
-            //on ne rentre jamais dedans
 
         }
         private bool ProcheHeros(MouseEventArgs e)
@@ -128,6 +127,11 @@ namespace TP2_DevGraphique
                 }
                 break;
             }
+        }
+
+        private void miseAJourAffichage()
+        {
+            labelMoney.Text = "Money : "; //rajouter monaie du joueur.
         }
     }
 }
