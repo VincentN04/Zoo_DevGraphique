@@ -54,7 +54,9 @@ namespace TestTilesetZoo
         public static int MOUTON = 36;
         public static int LICORNE = 37;
         public static int DECHET = 38;
-
+        public static int CHAMP = 39;
+        public static int ROCHE = 40;
+       
 
         public static List<TileCoord> listeCoord = new List<TileCoord>();
         private static List<Bitmap> listeBitmap = new List<Bitmap>();
@@ -96,6 +98,8 @@ namespace TestTilesetZoo
             listeCoord.Add(new TileCoord() { Ligne = 19, Colonne = 8 }); // MOUTON
             listeCoord.Add(new TileCoord() { Ligne = 16, Colonne = 16 }); // LICORNE
             listeCoord.Add(new TileCoord() { Ligne = 23, Colonne = 1 }); // DECHET
+            listeCoord.Add(new TileCoord() { Ligne = 1, Colonne = 6 });//champ
+            listeCoord.Add(new TileCoord() { Ligne = 0, Colonne = 29 });//ROCHE
 
             listeBitmap.Add(LoadTile(GAZON)); // GAZON
             listeBitmap.Add(LoadTile(PLANCHER_BOIS)); // PLANCHER_BOIS
@@ -137,12 +141,14 @@ namespace TestTilesetZoo
 
             listeBitmap.Add(LoadTile(MUR)); // MUR
 
-            listeBitmap.Add(LoadTile(EAU)); // EAU
+            listeBitmap.Add(LoadTile(EAU)); // EAUC:\Users\J-P\Documents\GitHub\Zoo_DevGraphique\TP2 DevGraphique\TP2 DevGraphique\TilesetImageGenerator.cs
 
             listeBitmap.Add(LoadTile(LION)); // Lion
             listeBitmap.Add(LoadTile(MOUTON)); // Mouton
             listeBitmap.Add(LoadTile(LICORNE)); // Licorne
             listeBitmap.Add(LoadTile(DECHET));
+            listeBitmap.Add(LoadTile(CHAMP)); // CHAMP
+            listeBitmap.Add(LoadTile(ROCHE)); // ROCHE
         }
 
         private static Bitmap LoadTile(int posListe)
