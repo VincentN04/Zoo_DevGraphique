@@ -48,12 +48,15 @@ namespace TestTilesetZoo
         public static int SABLE4 = 30;
         public static int SABLE5 = 31;
         public static int SABLE6 = 32;
-        public static int MUR = 33;
-        public static int EAU = 34;
-        public static int LION = 35;
-        public static int MOUTON = 36;
-        public static int LICORNE = 37;
-        public static int DECHET = 38;
+        public static int SABLE7 = 33;
+        public static int SABLE8 = 34;
+        public static int SABLE9 = 35;
+        public static int MUR = 36;
+        public static int EAU = 37;
+        public static int LION = 38;
+        public static int MOUTON = 39;
+        public static int LICORNE = 40;
+        public static int DECHET = 41;
 
 
         public static List<TileCoord> listeCoord = new List<TileCoord>();
@@ -84,10 +87,13 @@ namespace TestTilesetZoo
 
             listeCoord.Add(new TileCoord() { Ligne = 13, Colonne = 3 }); // SABLE1
             listeCoord.Add(new TileCoord() { Ligne = 13, Colonne = 4 }); // SABLE2
-            listeCoord.Add(new TileCoord() { Ligne = 14, Colonne = 3 }); // SABLE3
-            listeCoord.Add(new TileCoord() { Ligne = 14, Colonne = 4 }); // SABLE4
-            listeCoord.Add(new TileCoord() { Ligne = 15, Colonne = 3 }); // SABLE5
-            listeCoord.Add(new TileCoord() { Ligne = 15, Colonne = 4 }); // SABLE6
+            listeCoord.Add(new TileCoord() { Ligne = 13, Colonne = 5 }); // SABLE3
+            listeCoord.Add(new TileCoord() { Ligne = 14, Colonne = 3 }); // SABLE4
+            listeCoord.Add(new TileCoord() { Ligne = 14, Colonne = 4 }); // SABLE5
+            listeCoord.Add(new TileCoord() { Ligne = 14, Colonne = 5 }); // SABLE6
+            listeCoord.Add(new TileCoord() { Ligne = 15, Colonne = 3 }); // SABLE7
+            listeCoord.Add(new TileCoord() { Ligne = 15, Colonne = 4 }); // SABLE8
+            listeCoord.Add(new TileCoord() { Ligne = 15, Colonne = 5 });// SABLE9
 
             listeCoord.Add(new TileCoord() { Ligne = 10, Colonne = 18 }); // MUR
 
@@ -134,6 +140,9 @@ namespace TestTilesetZoo
             listeBitmap.Add(LoadTile(SABLE4)); // SABLE4
             listeBitmap.Add(LoadTile(SABLE5)); // SABLE5
             listeBitmap.Add(LoadTile(SABLE6)); // SABLE6
+            listeBitmap.Add(LoadTile(SABLE7)); // SABLE7
+            listeBitmap.Add(LoadTile(SABLE8)); // SABLE8
+            listeBitmap.Add(LoadTile(SABLE9)); // SABLE9
 
             listeBitmap.Add(LoadTile(MUR)); // MUR
 

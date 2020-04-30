@@ -36,18 +36,19 @@ namespace TP2_DevGraphique
             // carteJeu1
             // 
             this.carteJeu1.Location = new System.Drawing.Point(0, 0);
+            this.carteJeu1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.carteJeu1.Name = "carteJeu1";
-            this.carteJeu1.Size = new System.Drawing.Size(1019, 672);
+            this.carteJeu1.Size = new System.Drawing.Size(1359, 827);
             this.carteJeu1.TabIndex = 0;
             this.carteJeu1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.carteJeu1_MouseDown);
             // 
             // ZooInterface
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1019, 671);
+            this.ClientSize = new System.Drawing.Size(1359, 826);
             this.Controls.Add(this.carteJeu1);
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "ZooInterface";
             this.Text = "Form1";
             this.ResumeLayout(false);
