@@ -39,41 +39,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
-            //
-            // pictureBox3
-            // 
-            this.pictureBox3.BackgroundImage = global::TP2_DevGraphique.Properties.Resources.dessin_mouton;
-            this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox3.Cursor = System.Windows.Forms.Cursors.Default;
-            this.pictureBox3.Location = new System.Drawing.Point(47, 106);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(267, 276);
-            this.pictureBox3.TabIndex = 2;
-            this.pictureBox3.TabStop = false;
-            this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackgroundImage = global::TP2_DevGraphique.Properties.Resources.DessinLion;
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(399, 106);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(267, 276);
-            this.pictureBox1.TabIndex = 3;
-            this.pictureBox1.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackgroundImage = global::TP2_DevGraphique.Properties.Resources.coloriage_licorne1;
-            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox2.Location = new System.Drawing.Point(753, 106);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(267, 276);
-            this.pictureBox2.TabIndex = 4;
-            this.pictureBox2.TabStop = false;
             // 
             // label1
             // 
@@ -122,7 +87,8 @@
             // 
             this.pictureBox2.BackgroundImage = global::TP2_DevGraphique.Properties.Resources.UNICORN;
             this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox2.Location = new System.Drawing.Point(541, 86);
+            this.pictureBox2.Location = new System.Drawing.Point(788, 86);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(177, 224);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -134,7 +100,8 @@
             // 
             this.pictureBox1.BackgroundImage = global::TP2_DevGraphique.Properties.Resources.Autumn_Lion_icon;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(288, 86);
+            this.pictureBox1.Location = new System.Drawing.Point(425, 86);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(196, 224);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -147,7 +114,8 @@
             this.pictureBox3.BackgroundImage = global::TP2_DevGraphique.Properties.Resources.Dorset_Sheep_icon;
             this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox3.Cursor = System.Windows.Forms.Cursors.Default;
-            this.pictureBox3.Location = new System.Drawing.Point(86, 168);
+            this.pictureBox3.Location = new System.Drawing.Point(107, 168);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(131, 142);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -168,7 +136,7 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.pictureBox3);
             this.ForeColor = System.Drawing.Color.Black;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "ChoixAnimaux";
             this.Text = "ChoixAnimaux";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
