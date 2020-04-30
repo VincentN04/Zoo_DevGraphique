@@ -35,16 +35,17 @@ namespace TP2_DevGraphique
             // 
             // carteJeu1
             // 
-            this.carteJeu1.Location = new System.Drawing.Point(12, 0);
+            this.carteJeu1.Location = new System.Drawing.Point(0, 0);
             this.carteJeu1.Name = "carteJeu1";
             this.carteJeu1.Size = new System.Drawing.Size(1019, 672);
             this.carteJeu1.TabIndex = 0;
+            this.carteJeu1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.carteJeu1_MouseDown);
             // 
             // ZooInterface
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1030, 671);
+            this.ClientSize = new System.Drawing.Size(1019, 671);
             this.Controls.Add(this.carteJeu1);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "ZooInterface";
@@ -56,7 +57,6 @@ namespace TP2_DevGraphique
         #endregion
 
         private TP2.CarteJeu carteJeu1;
-        private CarteJeu carteJeu2;
     }
 }
 

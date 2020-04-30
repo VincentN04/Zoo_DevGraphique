@@ -63,6 +63,16 @@ namespace TP2_DevGraphique.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Autumn_Lion_icon {
+            get {
+                object obj = ResourceManager.GetObject("Autumn_Lion_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap bas1 {
             get {
                 object obj = ResourceManager.GetObject("bas1", resourceCulture);
@@ -102,29 +112,9 @@ namespace TP2_DevGraphique.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap coloriage_licorne1 {
+        internal static System.Drawing.Bitmap Dorset_Sheep_icon {
             get {
-                object obj = ResourceManager.GetObject("coloriage_licorne1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap dessin_mouton {
-            get {
-                object obj = ResourceManager.GetObject("dessin_mouton", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap DessinLion {
-            get {
-                object obj = ResourceManager.GetObject("DessinLion", resourceCulture);
+                object obj = ResourceManager.GetObject("Dorset_Sheep_icon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -270,6 +260,16 @@ namespace TP2_DevGraphique.Properties {
         internal static System.Drawing.Bitmap personnages {
             get {
                 object obj = ResourceManager.GetObject("personnages", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap UNICORN {
+            get {
+                object obj = ResourceManager.GetObject("UNICORN", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
