@@ -56,7 +56,10 @@ namespace TestTilesetZoo
         public static int DECHET = 38;
         public static int CHAMP = 39;
         public static int ROCHE = 40;
-       
+        public static int SABLE7 = 41;
+        public static int SABLE8 = 42;
+        public static int SABLE9 = 43;
+
 
         public static List<TileCoord> listeCoord = new List<TileCoord>();
         private static List<Bitmap> listeBitmap = new List<Bitmap>();
@@ -86,10 +89,11 @@ namespace TestTilesetZoo
 
             listeCoord.Add(new TileCoord() { Ligne = 13, Colonne = 3 }); // SABLE1
             listeCoord.Add(new TileCoord() { Ligne = 13, Colonne = 4 }); // SABLE2
-            listeCoord.Add(new TileCoord() { Ligne = 14, Colonne = 3 }); // SABLE3
-            listeCoord.Add(new TileCoord() { Ligne = 14, Colonne = 4 }); // SABLE4
-            listeCoord.Add(new TileCoord() { Ligne = 15, Colonne = 3 }); // SABLE5
-            listeCoord.Add(new TileCoord() { Ligne = 15, Colonne = 4 }); // SABLE6
+            listeCoord.Add(new TileCoord() { Ligne = 13, Colonne = 5 }); // SABLE3
+            listeCoord.Add(new TileCoord() { Ligne = 14, Colonne = 3 }); // SABLE4
+            listeCoord.Add(new TileCoord() { Ligne = 14, Colonne = 4 }); // SABLE5
+            listeCoord.Add(new TileCoord() { Ligne = 14, Colonne = 5 }); // SABLE6
+            
 
             listeCoord.Add(new TileCoord() { Ligne = 10, Colonne = 18 }); // MUR
 
@@ -100,6 +104,9 @@ namespace TestTilesetZoo
             listeCoord.Add(new TileCoord() { Ligne = 23, Colonne = 1 }); // DECHET
             listeCoord.Add(new TileCoord() { Ligne = 1, Colonne = 6 });//champ
             listeCoord.Add(new TileCoord() { Ligne = 0, Colonne = 29 });//ROCHE
+            listeCoord.Add(new TileCoord() { Ligne = 15, Colonne = 3 }); // SABLE7
+            listeCoord.Add(new TileCoord() { Ligne = 15, Colonne = 4 }); // SABLE8
+            listeCoord.Add(new TileCoord() { Ligne = 15, Colonne = 5 });// SABLE9
 
             listeBitmap.Add(LoadTile(GAZON)); // GAZON
             listeBitmap.Add(LoadTile(PLANCHER_BOIS)); // PLANCHER_BOIS
@@ -138,6 +145,7 @@ namespace TestTilesetZoo
             listeBitmap.Add(LoadTile(SABLE4)); // SABLE4
             listeBitmap.Add(LoadTile(SABLE5)); // SABLE5
             listeBitmap.Add(LoadTile(SABLE6)); // SABLE6
+            
 
             listeBitmap.Add(LoadTile(MUR)); // MUR
 
@@ -149,6 +157,9 @@ namespace TestTilesetZoo
             listeBitmap.Add(LoadTile(DECHET));
             listeBitmap.Add(LoadTile(CHAMP)); // CHAMP
             listeBitmap.Add(LoadTile(ROCHE)); // ROCHE
+            listeBitmap.Add(LoadTile(SABLE7)); // SABLE7
+            listeBitmap.Add(LoadTile(SABLE8)); // SABLE8
+            listeBitmap.Add(LoadTile(SABLE9)); // SABLE9
         }
 
         private static Bitmap LoadTile(int posListe)
