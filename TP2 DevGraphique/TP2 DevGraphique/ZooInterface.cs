@@ -170,7 +170,7 @@ namespace TP2_DevGraphique
         {
             labelMoney.Text = "Money : " + Heros.monaieJoueur; //rajouter monaie du joueur.
             labelAnimaux.Text = "Animaux : " + CarteJeu.comptAnimal;
-            labelVisiteurs.Text = "Visiteurs : " + CarteJeu.comptVisiteur;
+            labelVisiteurs.Text = "Visiteurs : ";
 
         }
     }
