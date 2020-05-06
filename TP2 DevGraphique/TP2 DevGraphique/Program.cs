@@ -8,6 +8,7 @@ namespace TP2_DevGraphique
 {
     static class Program
     {
+
         /// <summary>
         /// Point d'entrée principal de l'application.
         /// </summary>

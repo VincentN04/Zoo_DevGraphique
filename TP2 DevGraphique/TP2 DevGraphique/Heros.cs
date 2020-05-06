@@ -10,7 +10,7 @@ namespace TP2
     {
         public static int X = 12 * 32;
         public static int Y = 7 * 32;
-        public int monaieJoueur = 100;
+        public static int monaieJoueur = 100;
 
         public class HerosPos
         {
@@ -25,28 +25,31 @@ namespace TP2
                 get;
                 set;
             }
+
+            public int monaieJoueur
+            {
+                get;
+                set;
+            }
         }
-        
-        public void ajoutArgent(int profit)
+
+        public static void ajoutArgent(int profit)
         {
             monaieJoueur += profit;
         }
 
-        public void baisseArgent(int perte)
+        public static void baisseArgent(int perte)
         {
             monaieJoueur -= perte;
-            if(monaieJoueur < 0)
+            if (monaieJoueur < 0)
             {
                 monaieJoueur = 0;
                 //ATTENTION : Ca veut dire qu'il n'a plus d'argent.
             }
         }
 
-        public int getMonaie()
-        {
-            return monaieJoueur;
-        }
+
     }
 
-   
+
 }

@@ -12,7 +12,7 @@ using TP2;
 namespace TP2_DevGraphique
 {
     public partial class ZooInterface : Form
-    {
+    { 
         public ZooInterface()
         {
             InitializeComponent();
@@ -129,9 +129,49 @@ namespace TP2_DevGraphique
             }
         }
 
-        private void miseAJourAffichage()
+        //public string labelMoneyManipulable
+        //{
+        //    get
+        //    {
+        //        return this.labelMoney.Text;
+        //    }
+        //    set
+        //    {
+        //        this.labelMoney.Text = value;
+        //    }
+        //}
+
+        //public string labelAnimauxManipulable
+        //{
+        //    get
+        //    {
+        //        return this.labelAnimaux.Text;
+        //    }
+        //    set
+        //    {
+        //        this.labelAnimaux.Text = value;
+        //    }
+        //}
+
+        //public string labelVisiteursManipulable
+        //{
+        //    get
+        //    {
+        //        return this.labelVisiteurs.Text;
+        //    }
+        //    set
+        //    {
+        //        this.labelVisiteurs.Text = value;
+        //    }
+        //}
+
+
+        public void miseAJourAffichage()
         {
-            labelMoney.Text = "Money : "; //rajouter monaie du joueur.
+            labelMoney.Text = "Money : " + Heros.monaieJoueur; //rajouter monaie du joueur.
+            labelAnimaux.Text = "Animaux : " + CarteJeu.comptAnimal;
+            labelVisiteurs.Text = "Visiteurs : " + CarteJeu.comptVisiteur;
+
         }
     }
 }
