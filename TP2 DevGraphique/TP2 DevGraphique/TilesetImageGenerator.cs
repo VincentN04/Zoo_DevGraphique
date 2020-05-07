@@ -59,6 +59,16 @@ namespace TestTilesetZoo
         public static int SABLE7 = 41;
         public static int SABLE8 = 42;
         public static int SABLE9 = 43;
+        public static int puit1 = 44;
+        public static int puit2 = 45;
+        public static int puit3 = 46;
+        public static int puit4 = 47;
+        public static int puit5 = 48;
+        public static int puit6 = 49;
+        public static int puit7 = 50;
+        public static int puit8 = 51;
+        public static int puit9 = 52;
+        
 
 
         public static List<TileCoord> listeCoord = new List<TileCoord>();
@@ -107,6 +117,15 @@ namespace TestTilesetZoo
             listeCoord.Add(new TileCoord() { Ligne = 15, Colonne = 3 }); // SABLE7
             listeCoord.Add(new TileCoord() { Ligne = 15, Colonne = 4 }); // SABLE8
             listeCoord.Add(new TileCoord() { Ligne = 15, Colonne = 5 });// SABLE9
+            listeCoord.Add(new TileCoord() { Ligne = 13, Colonne = 24 });
+            listeCoord.Add(new TileCoord() { Ligne = 13, Colonne = 25 });
+            listeCoord.Add(new TileCoord() { Ligne = 13, Colonne = 26});
+            listeCoord.Add(new TileCoord() { Ligne = 14, Colonne = 24 });
+            listeCoord.Add(new TileCoord() { Ligne = 14, Colonne = 25 });
+            listeCoord.Add(new TileCoord() { Ligne = 14, Colonne = 26 });
+            listeCoord.Add(new TileCoord() { Ligne = 15, Colonne = 24 });
+            listeCoord.Add(new TileCoord() { Ligne = 15, Colonne = 25 });
+            listeCoord.Add(new TileCoord() { Ligne = 15, Colonne = 26 });
 
             listeBitmap.Add(LoadTile(GAZON)); // GAZON
             listeBitmap.Add(LoadTile(PLANCHER_BOIS)); // PLANCHER_BOIS
@@ -160,6 +179,16 @@ namespace TestTilesetZoo
             listeBitmap.Add(LoadTile(SABLE7)); // SABLE7
             listeBitmap.Add(LoadTile(SABLE8)); // SABLE8
             listeBitmap.Add(LoadTile(SABLE9)); // SABLE9
+            listeBitmap.Add(LoadTile(puit1));
+            listeBitmap.Add(LoadTile(puit2));
+            listeBitmap.Add(LoadTile(puit3));
+            listeBitmap.Add(LoadTile(puit4));
+            listeBitmap.Add(LoadTile(puit5));
+            listeBitmap.Add(LoadTile(puit6));
+            listeBitmap.Add(LoadTile(puit7));
+            listeBitmap.Add(LoadTile(puit8));
+            listeBitmap.Add(LoadTile(puit9));
+           
         }
 
         private static Bitmap LoadTile(int posListe)

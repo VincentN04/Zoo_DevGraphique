@@ -410,6 +410,38 @@ namespace TP2
             g.DrawImage(TestTilesetZoo.TilesetImageGenerator.GetTile(0), 18 * MapPixel, 13 * MapPixel);
 
             // Dessine la maison 
+            g.DrawImage(TestTilesetZoo.TilesetImageGenerator.GetTile(4), 24 * MapPixel, 1 * MapPixel);
+            g.DrawImage(TestTilesetZoo.TilesetImageGenerator.GetTile(5), 25 * MapPixel, 1 * MapPixel);
+            g.DrawImage(TestTilesetZoo.TilesetImageGenerator.GetTile(6), 26 * MapPixel, 1 * MapPixel);
+            g.DrawImage(TestTilesetZoo.TilesetImageGenerator.GetTile(7), 27 * MapPixel, 1 * MapPixel);
+            g.DrawImage(TestTilesetZoo.TilesetImageGenerator.GetTile(8), 24 * MapPixel, 2 * MapPixel);
+            g.DrawImage(TestTilesetZoo.TilesetImageGenerator.GetTile(9), 25 * MapPixel, 2 * MapPixel);
+            g.DrawImage(TestTilesetZoo.TilesetImageGenerator.GetTile(10), 26 * MapPixel, 2 * MapPixel);
+            g.DrawImage(TestTilesetZoo.TilesetImageGenerator.GetTile(11), 27 * MapPixel, 2 * MapPixel);
+            g.DrawImage(TestTilesetZoo.TilesetImageGenerator.GetTile(12), 24 * MapPixel, 3 * MapPixel);
+            g.DrawImage(TestTilesetZoo.TilesetImageGenerator.GetTile(13), 25 * MapPixel, 3 * MapPixel);
+            g.DrawImage(TestTilesetZoo.TilesetImageGenerator.GetTile(14), 26 * MapPixel, 3 * MapPixel);
+            g.DrawImage(TestTilesetZoo.TilesetImageGenerator.GetTile(15), 27 * MapPixel, 3 * MapPixel);
+            g.DrawImage(TestTilesetZoo.TilesetImageGenerator.GetTile(16), 24 * MapPixel, 4 * MapPixel);
+            g.DrawImage(TestTilesetZoo.TilesetImageGenerator.GetTile(17), 25 * MapPixel, 4 * MapPixel);
+            g.DrawImage(TestTilesetZoo.TilesetImageGenerator.GetTile(18), 26 * MapPixel, 4 * MapPixel);
+            g.DrawImage(TestTilesetZoo.TilesetImageGenerator.GetTile(19), 27 * MapPixel, 4 * MapPixel);
+            g.DrawImage(TestTilesetZoo.TilesetImageGenerator.GetTile(20), 24 * MapPixel, 5 * MapPixel);
+            g.DrawImage(TestTilesetZoo.TilesetImageGenerator.GetTile(21), 25 * MapPixel, 5 * MapPixel);
+            g.DrawImage(TestTilesetZoo.TilesetImageGenerator.GetTile(22), 26 * MapPixel, 5 * MapPixel);
+            g.DrawImage(TestTilesetZoo.TilesetImageGenerator.GetTile(23), 27 * MapPixel, 5 * MapPixel);
+
+            //dessine le puit
+            g.DrawImage(TestTilesetZoo.TilesetImageGenerator.GetTile(44), 6 * MapPixel, 17 * MapPixel);
+            g.DrawImage(TestTilesetZoo.TilesetImageGenerator.GetTile(45), 7 * MapPixel, 17 * MapPixel);
+            g.DrawImage(TestTilesetZoo.TilesetImageGenerator.GetTile(46), 8 * MapPixel, 17 * MapPixel);
+            g.DrawImage(TestTilesetZoo.TilesetImageGenerator.GetTile(47), 6 * MapPixel, 18 * MapPixel);
+            g.DrawImage(TestTilesetZoo.TilesetImageGenerator.GetTile(48), 7 * MapPixel, 18 * MapPixel);
+            g.DrawImage(TestTilesetZoo.TilesetImageGenerator.GetTile(49), 8 * MapPixel, 18 * MapPixel);
+            g.DrawImage(TestTilesetZoo.TilesetImageGenerator.GetTile(50), 6 * MapPixel, 19 * MapPixel);
+            g.DrawImage(TestTilesetZoo.TilesetImageGenerator.GetTile(51), 7 * MapPixel, 19 * MapPixel);
+            g.DrawImage(TestTilesetZoo.TilesetImageGenerator.GetTile(52), 8 * MapPixel, 19 * MapPixel);
+
             g.DrawImage(TestTilesetZoo.TilesetImageGenerator.GetTile(39), 1 * MapPixel, 16 * MapPixel);
             g.DrawImage(TestTilesetZoo.TilesetImageGenerator.GetTile(39), 2 * MapPixel, 16 * MapPixel);
             g.DrawImage(TestTilesetZoo.TilesetImageGenerator.GetTile(39), 3 * MapPixel, 16 * MapPixel);
@@ -426,8 +458,6 @@ namespace TP2
             g.DrawImage(TestTilesetZoo.TilesetImageGenerator.GetTile(39), 2 * MapPixel, 19 * MapPixel);
             g.DrawImage(TestTilesetZoo.TilesetImageGenerator.GetTile(39), 3 * MapPixel, 19 * MapPixel);
             g.DrawImage(TestTilesetZoo.TilesetImageGenerator.GetTile(39), 4 * MapPixel, 19 * MapPixel);
-          
-
             // Dessine le barrel
             g.DrawImage(TestTilesetZoo.TilesetImageGenerator.GetTile(34), 1 * MapPixel, 20 * MapPixel);
 
