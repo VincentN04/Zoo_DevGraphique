@@ -1,5 +1,7 @@
 # Zoo_DevGraphique
  Travail pratique du cours de développement graphique
+ 
+ ![ScreenShot du Zoo](ScreenShot/ZooDevGraphique.PNG)
 
 ### Membres de l'équipe:
  - Clément Deffes
