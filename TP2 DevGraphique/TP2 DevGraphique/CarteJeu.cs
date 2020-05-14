@@ -37,7 +37,7 @@ namespace TP2
         public static Boolean Sauter = false;
         //AnimalInfoWindow info = new AnimalInfoWindow();
         int comptJour = 1;
-        public bool Deplace = false;
+        public bool Deplace = true;
         public static bool dechet = false;
         public static int comptAnimal = 0;
         public static int comptArgent = 100;
@@ -584,10 +584,9 @@ namespace TP2
                         
                         case "Lion":
                             MapObstacle[CarteJeu.RegistreA[h].x, CarteJeu.RegistreA[h].y] = true;
-                            
+                            MapObstacle[CarteJeu.RegistreV[h].x, CarteJeu.RegistreV[h].y] = true;
                             g.DrawImage(TestTilesetZoo.TilesetImageGenerator.GetTile(35), CarteJeu.RegistreA[h].x * MapPixel, CarteJeu.RegistreA[h].y * MapPixel);
                             g.DrawImage(TileVisiteur.GetTile(CarteJeu.RegistreV[h].modele,1), CarteJeu.RegistreV[h].x*MapPixel, CarteJeu.RegistreV[h].y*MapPixel,32,32);
-                            MapObstacle[CarteJeu.RegistreV[h].x, CarteJeu.RegistreV[h].y] = true;
                             //((ZooInterface)Parent).LblAnimaux.Text = "Nombre d'animaux : " + (comptAnimal + 1).ToString();
                             //((ZooInterface)Parent).LblDollar.Text = (comptArgent + 2 + (2 * comptAnimal) - 35).ToString() + "$";
                             break;
@@ -696,7 +695,6 @@ namespace TP2
 
 
                     }
-
                 }
                 
                 for (int y = 0; y < compt; y++)
@@ -711,7 +709,7 @@ namespace TP2
                                 // Condition pour les obstacles
                                 if (MapObstacle[CarteJeu.RegistreV[y].y, (CarteJeu.RegistreV[y].x - 1)] == false)
                                 {
-                                    if (rand.Next(0, 2) == 1)
+                                    if (rand.Next(0, 10) == 1)
                                     {
                                         g.DrawImage(TestTilesetZoo.TilesetImageGenerator.GetTile(38), CarteJeu.RegistreV[y].x * MapPixel, CarteJeu.RegistreV[y].y * MapPixel);
                                         MapDechet[CarteJeu.RegistreV[y].x, CarteJeu.RegistreV[y].y] = true;
@@ -723,7 +721,8 @@ namespace TP2
                                     }
                                     if (CarteJeu.RegistreV[y].y > 2 && CarteJeu.RegistreV[y].y < 6 && CarteJeu.RegistreV[y].x > 2 && CarteJeu.RegistreV[y].x < 10 ||
                                        CarteJeu.RegistreV[y].y > 9 && CarteJeu.RegistreV[y].y < 13 && CarteJeu.RegistreV[y].x > 2 && CarteJeu.RegistreV[y].x < 10 ||
-                   CarteJeu.RegistreV[y].y > 2 && CarteJeu.RegistreV[y].y < 6 && CarteJeu.RegistreV[y].x > 14 && CarteJeu.RegistreV[y].x < 22 || CarteJeu.RegistreV[y].y > 9 && CarteJeu.RegistreV[y].y < 13 && CarteJeu.RegistreV[y].x > 14 && CarteJeu.RegistreV[y].x < 22)
+                                       CarteJeu.RegistreV[y].y > 2 && CarteJeu.RegistreV[y].y < 6 && CarteJeu.RegistreV[y].x > 14 && CarteJeu.RegistreV[y].x < 22 ||
+                                       CarteJeu.RegistreV[y].y > 9 && CarteJeu.RegistreV[y].y < 13 && CarteJeu.RegistreV[y].x > 14 && CarteJeu.RegistreV[y].x < 22)
                                     {
                                        
                                 }
@@ -745,7 +744,7 @@ namespace TP2
                                 // Condition pour les obstacles
                                 if (MapObstacle[CarteJeu.RegistreV[y].y, (CarteJeu.RegistreV[y].x + 1)] == false)
                                 {
-                                    if (rand.Next(0, 2) == 1)
+                                    if (rand.Next(0, 10) == 1)
                                     {
                                         g.DrawImage(TestTilesetZoo.TilesetImageGenerator.GetTile(38), CarteJeu.RegistreV[y].x * MapPixel, CarteJeu.RegistreV[y].y * MapPixel);
                                         MapDechet[CarteJeu.RegistreV[y].x, CarteJeu.RegistreV[y].y] = true;
@@ -781,7 +780,7 @@ namespace TP2
                                 // Condition pour les obstacles
                                 if (MapObstacle[CarteJeu.RegistreV[y].y - 1, (CarteJeu.RegistreV[y].x)] == false)
                                 {
-                                    if (rand.Next(0, 2) == 1)
+                                    if (rand.Next(0, 10) == 1)
                                     {
                                         g.DrawImage(TestTilesetZoo.TilesetImageGenerator.GetTile(38), CarteJeu.RegistreV[y].x * MapPixel, CarteJeu.RegistreV[y].y * MapPixel);
                                         MapDechet[CarteJeu.RegistreV[y].x, CarteJeu.RegistreV[y].y] = true;
@@ -816,7 +815,7 @@ namespace TP2
                                 // Condition pour les obstacles
                                 if (MapObstacle[CarteJeu.RegistreV[y].y + 1, (CarteJeu.RegistreV[y].x)] == false)
                                 {
-                                    if (rand.Next(0, 2) == 1)
+                                    if (rand.Next(0, 10) == 1)
                                     {
                                         g.DrawImage(TestTilesetZoo.TilesetImageGenerator.GetTile(38), CarteJeu.RegistreV[y].x * MapPixel, CarteJeu.RegistreV[y].y * MapPixel);
                                         MapDechet[CarteJeu.RegistreV[y].x, CarteJeu.RegistreV[y].y] = true;
@@ -883,6 +882,7 @@ namespace TP2
         /// <returns></returns>
         public int EvenementClick(Keys keyData)
         {
+            
             switch (keyData)
             {
                 case Keys.Up:
@@ -941,8 +941,6 @@ namespace TP2
         /// </summary>
         private void BoucleDeJeu()
         {
-            
-            
             while (true)
             {
                 // Faire ici tous les calculs qui ne
@@ -964,10 +962,10 @@ namespace TP2
                     {
                         // Faire ici tous les changements qui auront des impacts visuels
                         // dans l’écran
-                        //((ZooInterface)Parent).LblJourActuel.Text = Temps.ToString();
-                        
-                        //((ZooInterface)Parent).LblJourActuel.Text = "Jour " + comptJour;
-                       
+                        //((ZooInterface)Parent).labelJour.Text = Temps.ToString();
+
+                        //((ZooInterface)Parent).labelJour.Text = "Jour " + comptJour;
+
                         Refresh();
                     });
                
