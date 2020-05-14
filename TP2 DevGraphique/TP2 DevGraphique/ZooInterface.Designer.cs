@@ -32,10 +32,10 @@ namespace TP2_DevGraphique
         {
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.labelJour = new System.Windows.Forms.ToolStripLabel();
-            this.labelAnimaux = new System.Windows.Forms.ToolStripLabel();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.labelMoney = new System.Windows.Forms.ToolStripLabel();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.labelAnimaux = new System.Windows.Forms.ToolStripLabel();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.labelVisiteurs = new System.Windows.Forms.ToolStripLabel();
             this.carteJeu1 = new TP2.CarteJeu();
@@ -45,6 +45,7 @@ namespace TP2_DevGraphique
             // toolStrip1
             // 
             this.toolStrip1.BackColor = System.Drawing.Color.DarkOliveGreen;
+            this.toolStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.labelJour,
             this.toolStripSeparator1,
@@ -55,7 +56,7 @@ namespace TP2_DevGraphique
             this.labelVisiteurs});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(954, 28);
+            this.toolStrip1.Size = new System.Drawing.Size(1272, 35);
             this.toolStrip1.TabIndex = 1;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -64,64 +65,65 @@ namespace TP2_DevGraphique
             this.labelJour.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelJour.ForeColor = System.Drawing.Color.White;
             this.labelJour.Name = "labelJour";
-            this.labelJour.Size = new System.Drawing.Size(62, 25);
+            this.labelJour.Size = new System.Drawing.Size(79, 32);
             this.labelJour.Text = "Jour : ";
-            // 
-            // labelAnimaux
-            // 
-            this.labelAnimaux.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelAnimaux.ForeColor = System.Drawing.Color.White;
-            this.labelAnimaux.Name = "labelAnimaux";
-            this.labelAnimaux.Size = new System.Drawing.Size(100, 25);
-            this.labelAnimaux.Text = "Animaux : ";
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 28);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 35);
             // 
             // labelMoney
             // 
             this.labelMoney.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelMoney.ForeColor = System.Drawing.Color.White;
             this.labelMoney.Name = "labelMoney";
-            this.labelMoney.Size = new System.Drawing.Size(84, 25);
+            this.labelMoney.Size = new System.Drawing.Size(109, 32);
             this.labelMoney.Text = "Money : ";
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 28);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 35);
+            // 
+            // labelAnimaux
+            // 
+            this.labelAnimaux.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelAnimaux.ForeColor = System.Drawing.Color.White;
+            this.labelAnimaux.Name = "labelAnimaux";
+            this.labelAnimaux.Size = new System.Drawing.Size(127, 32);
+            this.labelAnimaux.Text = "Animaux : ";
             // 
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 28);
+            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 35);
             // 
             // labelVisiteurs
             // 
             this.labelVisiteurs.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelVisiteurs.ForeColor = System.Drawing.Color.White;
             this.labelVisiteurs.Name = "labelVisiteurs";
-            this.labelVisiteurs.Size = new System.Drawing.Size(98, 25);
+            this.labelVisiteurs.Size = new System.Drawing.Size(124, 32);
             this.labelVisiteurs.Text = "Visiteurs : ";
             // 
             // carteJeu1
             // 
-            this.carteJeu1.Location = new System.Drawing.Point(-3, 21);
+            this.carteJeu1.Location = new System.Drawing.Point(-4, 26);
+            this.carteJeu1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.carteJeu1.Name = "carteJeu1";
-            this.carteJeu1.Size = new System.Drawing.Size(1019, 672);
+            this.carteJeu1.Size = new System.Drawing.Size(1276, 827);
             this.carteJeu1.TabIndex = 0;
             this.carteJeu1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.carteJeu1_MouseDown);
             // 
             // ZooInterface
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(954, 690);
+            this.ClientSize = new System.Drawing.Size(1272, 849);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.carteJeu1);
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "ZooInterface";
             this.Text = "Form1";
             this.toolStrip1.ResumeLayout(false);

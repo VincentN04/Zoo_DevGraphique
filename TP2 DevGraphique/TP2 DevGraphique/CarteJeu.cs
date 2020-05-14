@@ -709,7 +709,8 @@ namespace TP2
                                     }
                                     if (CarteJeu.RegistreV[y].y > 2 && CarteJeu.RegistreV[y].y < 6 && CarteJeu.RegistreV[y].x > 2 && CarteJeu.RegistreV[y].x < 10 ||
                                        CarteJeu.RegistreV[y].y > 9 && CarteJeu.RegistreV[y].y < 13 && CarteJeu.RegistreV[y].x > 2 && CarteJeu.RegistreV[y].x < 10 ||
-                   CarteJeu.RegistreV[y].y > 2 && CarteJeu.RegistreV[y].y < 6 && CarteJeu.RegistreV[y].x > 14 && CarteJeu.RegistreV[y].x < 22 || CarteJeu.RegistreV[y].y > 9 && CarteJeu.RegistreV[y].y < 13 && CarteJeu.RegistreV[y].x > 14 && CarteJeu.RegistreV[y].x < 22)
+                                       CarteJeu.RegistreV[y].y > 2 && CarteJeu.RegistreV[y].y < 6 && CarteJeu.RegistreV[y].x > 14 && CarteJeu.RegistreV[y].x < 22 ||
+                                       CarteJeu.RegistreV[y].y > 9 && CarteJeu.RegistreV[y].y < 13 && CarteJeu.RegistreV[y].x > 14 && CarteJeu.RegistreV[y].x < 22)
                                     {
                                        
                                 }
@@ -869,6 +870,7 @@ namespace TP2
         /// <returns></returns>
         public int EvenementClick(Keys keyData)
         {
+            
             switch (keyData)
             {
                 case Keys.Up:
@@ -927,8 +929,6 @@ namespace TP2
         /// </summary>
         private void BoucleDeJeu()
         {
-            
-            
             while (true)
             {
                 // Faire ici tous les calculs qui ne
@@ -950,10 +950,10 @@ namespace TP2
                     {
                         // Faire ici tous les changements qui auront des impacts visuels
                         // dans l’écran
-                        //((ZooInterface)Parent).LblJourActuel.Text = Temps.ToString();
-                        
-                        //((ZooInterface)Parent).LblJourActuel.Text = "Jour " + comptJour;
-                       
+                        //((ZooInterface)Parent).labelJour.Text = Temps.ToString();
+
+                        //((ZooInterface)Parent).labelJour.Text = "Jour " + comptJour;
+
                         Refresh();
                     });
                
