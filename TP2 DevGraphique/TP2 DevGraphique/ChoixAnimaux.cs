@@ -28,6 +28,7 @@ namespace TP2_DevGraphique
                 choix = "Mouton";
                 CarteJeu.SpawnerAnimal(choix);
                 Heros.baisseArgent(20);
+                ToolStripInformative.miseAJourToolStrip();
             } else
             {
                 MessageBox.Show("Vous n'avez pas assez d'argent pour acheter un mouton !");
@@ -43,9 +44,12 @@ namespace TP2_DevGraphique
             choix = "Licorne";
             CarteJeu.SpawnerAnimal(choix);
                 Heros.baisseArgent(35);
-            } else
+                ToolStripInformative.miseAJourToolStrip();
+
+            }
+            else
             {
-                MessageBox.Show("Vous n'avez pas assez d'argent pour acheter un lion !");
+                MessageBox.Show("Vous n'avez pas assez d'argent pour acheter un licorne !");
 
             }
 
@@ -59,11 +63,13 @@ namespace TP2_DevGraphique
                 choix = "Lion";
                 CarteJeu.SpawnerAnimal(choix);
                 Heros.baisseArgent(50);
+                ToolStripInformative.miseAJourToolStrip();
+
 
             }
             else
             {
-                MessageBox.Show("Vous n'avez pas assez d'argent pour acheter une licorne !");
+                MessageBox.Show("Vous n'avez pas assez d'argent pour acheter une lion !");
 
             }
         }

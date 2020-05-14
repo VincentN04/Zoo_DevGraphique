@@ -16,7 +16,7 @@ namespace TP2_DevGraphique
         public ZooInterface()
         {
             InitializeComponent();
-            labelJour.Text += DateTime.Today.ToString("D");
+            ToolStripInformative.miseAJourToolStrip();
         }
         
 
@@ -129,49 +129,7 @@ namespace TP2_DevGraphique
             }
         }
 
-        //public string labelMoneyManipulable
-        //{
-        //    get
-        //    {
-        //        return this.labelMoney.Text;
-        //    }
-        //    set
-        //    {
-        //        this.labelMoney.Text = value;
-        //    }
-        //}
+       
 
-        //public string labelAnimauxManipulable
-        //{
-        //    get
-        //    {
-        //        return this.labelAnimaux.Text;
-        //    }
-        //    set
-        //    {
-        //        this.labelAnimaux.Text = value;
-        //    }
-        //}
-
-        //public string labelVisiteursManipulable
-        //{
-        //    get
-        //    {
-        //        return this.labelVisiteurs.Text;
-        //    }
-        //    set
-        //    {
-        //        this.labelVisiteurs.Text = value;
-        //    }
-        //}
-
-
-        public void miseAJourAffichage()
-        {
-            labelMoney.Text = "Money : " + Heros.monaieJoueur; //rajouter monaie du joueur.
-            labelAnimaux.Text = "Animaux : " + CarteJeu.comptAnimal;
-            labelVisiteurs.Text = "Visiteurs : ";
-
-        }
     }
 }

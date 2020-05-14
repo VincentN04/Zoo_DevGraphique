@@ -66,6 +66,12 @@
       <DependentUpon>ChoixAnimaux.cs</DependentUpon>
     </Compile>
     <Compile Include="Heros.cs" />
+    <Compile Include="ToolStripInformative.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ToolStripInformative.Designer.cs">
+      <DependentUpon>ToolStripInformative.cs</DependentUpon>
+    </Compile>
     <Compile Include="ZooInterface.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -95,6 +101,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="ToolStripInformative.resx">
+      <DependentUpon>ToolStripInformative.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ZooInterface.resx">
       <DependentUpon>ZooInterface.cs</DependentUpon>
     </EmbeddedResource>

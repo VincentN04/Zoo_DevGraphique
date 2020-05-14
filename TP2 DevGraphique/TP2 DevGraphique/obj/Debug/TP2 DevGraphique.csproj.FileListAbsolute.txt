@@ -34,3 +34,4 @@ C:\Users\Clément\Documents\GitHub\Zoo_DevGraphique\TP2 DevGraphique\TP2 DevGrap
 C:\Users\Clément\Documents\GitHub\Zoo_DevGraphique\TP2 DevGraphique\TP2 DevGraphique\obj\Debug\TP2 DevGraphique.csproj.CoreCompileInputs.cache
 C:\Users\Clément\Documents\GitHub\Zoo_DevGraphique\TP2 DevGraphique\TP2 DevGraphique\obj\Debug\TP2 DevGraphique.exe
 C:\Users\Clément\Documents\GitHub\Zoo_DevGraphique\TP2 DevGraphique\TP2 DevGraphique\obj\Debug\TP2 DevGraphique.pdb
+C:\Users\Clément\Documents\GitHub\Zoo_DevGraphique\TP2 DevGraphique\TP2 DevGraphique\obj\Debug\TP2_DevGraphique.ToolStripInformative.resources
