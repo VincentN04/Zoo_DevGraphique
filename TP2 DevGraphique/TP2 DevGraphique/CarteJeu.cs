@@ -188,6 +188,21 @@ namespace TP2
         /// </summary>
         private void InitializeMapObstacles()
         {
+            for(int i = 24; i < 28; i++)
+            {
+                for(int j = 1; j < 6; j++)
+                {
+                    MapObstacle[i,j] = true;
+                }
+            }
+
+            for (int i = 6; i < 9; i++)
+            {
+                for (int j = 17; j < 20; j++)
+                {
+                    MapObstacle[i, j] = true;
+                }
+            }
             // Sortie 
             MapObstacle[13, 19] = true;
             MapObstacle[17, 19] = true;
