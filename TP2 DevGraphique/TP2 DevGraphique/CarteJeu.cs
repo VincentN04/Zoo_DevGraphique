@@ -180,6 +180,8 @@ namespace TP2
                     compt++;
                     break;
             }
+
+            comptAnimal++;
             
         }
         /// <summary>
