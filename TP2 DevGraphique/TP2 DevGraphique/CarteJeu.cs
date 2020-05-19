@@ -711,8 +711,8 @@ namespace TP2
                     switch (Direction)
                     {
                         case 1:
-                            //up
-                            if (CarteJeu.RegistreV[y].x > 0&& CarteJeu.RegistreV[y].x< 30)
+                            //left
+                            if (CarteJeu.RegistreV[y].x > 0 && CarteJeu.RegistreV[y].x< 30)
                             {
                                 // Condition pour les obstacles
                                 if (MapObstacle[CarteJeu.RegistreV[y].y, (CarteJeu.RegistreV[y].x - 1)] == false)
@@ -746,7 +746,7 @@ namespace TP2
                             }
                             break;
                         case 2:
-                            //down
+                            //right
                             if (CarteJeu.RegistreV[y].x * MapPixel < 19 * MapPixel)
                             {
                                 // Condition pour les obstacles
@@ -781,8 +781,8 @@ namespace TP2
 
                             break;
                         case 3:
-                            //right
-                            if (0<CarteJeu.RegistreV[y].y&& CarteJeu.RegistreV[y].y < 21 )
+                            //up
+                            if (0 < CarteJeu.RegistreV[y].y)
                             {
 
                                 // Condition pour les obstacles
@@ -817,8 +817,8 @@ namespace TP2
 
                             break;
                         case 4:
-                            //left
-                            if (CarteJeu.RegistreV[y].y  > 28)
+                            //down
+                            if (CarteJeu.RegistreV[y].y < 20)
                             {
                                 // Condition pour les obstacles
                                 if (MapObstacle[CarteJeu.RegistreV[y].y + 1, (CarteJeu.RegistreV[y].x)] == false)
