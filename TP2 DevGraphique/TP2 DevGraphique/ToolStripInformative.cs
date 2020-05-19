@@ -24,7 +24,7 @@ namespace TP2_DevGraphique
         {
             labelAnimaux.Text = "Animaux : " + CarteJeu.comptAnimal;
             labelArgent.Text = "Argent : " + Heros.monaieJoueur;
-            labelVisiteurs.Text = "Visiteurs : " + CarteJeu.comptAnimal; //CHANGER ÇA
+            labelVisiteurs.Text = "Visiteurs : " + CarteJeu.comptVisiteur;
         }
     }
 }

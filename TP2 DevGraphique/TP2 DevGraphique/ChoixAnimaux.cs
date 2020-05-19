@@ -49,7 +49,7 @@ namespace TP2_DevGraphique
             }
             else
             {
-                MessageBox.Show("Vous n'avez pas assez d'argent pour acheter un licorne !");
+                MessageBox.Show("Vous n'avez pas assez d'argent pour acheter une licorne !");
 
             }
 
@@ -69,7 +69,7 @@ namespace TP2_DevGraphique
             }
             else
             {
-                MessageBox.Show("Vous n'avez pas assez d'argent pour acheter une lion !");
+                MessageBox.Show("Vous n'avez pas assez d'argent pour acheter un lion !");
 
             }
         }

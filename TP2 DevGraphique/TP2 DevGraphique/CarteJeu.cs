@@ -41,6 +41,7 @@ namespace TP2
         public static bool dechet = false;
         public static int comptAnimal = 0;
         public static int comptArgent = 100;
+        public static int comptVisiteur = 0;
 
         public CarteJeu()
         {
@@ -182,7 +183,11 @@ namespace TP2
             }
 
             comptAnimal++;
-            
+
+            //des qu'il y a un nouvel animal il y a un nouveau visiteur
+            Heros.ajoutArgent(2 * comptAnimal); // ce que paie le visiteur
+            comptVisiteur++;
+
         }
         /// <summary>
         /// Initialise le tableau boolean qui servira comme tableau d'obstacle pour le héros
@@ -386,6 +391,7 @@ namespace TP2
                 V.x = 28;
                 V.y = 9;
                 RegistreV[compt] = V;
+
             }
 
             // Dessine le tableau "tabMap"
@@ -954,6 +960,7 @@ namespace TP2
                     Deplace = true;
                     comptJour++;
                     Temps = 0;
+                   
                 }
                 else
                 {
@@ -967,6 +974,7 @@ namespace TP2
                         //((ZooInterface)Parent).labelJour.Text = Temps.ToString();
 
                         //((ZooInterface)Parent).labelJour.Text = "Jour " + comptJour;
+                        
 
                         Refresh();
                     });
@@ -989,5 +997,13 @@ namespace TP2
             public int Y { get; set; }
         }
 
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            if(comptVisiteur > 0)
+            {
+                Heros.ajoutArgent(comptVisiteur*comptAnimal); //toutes les minutes (60000 ms) chaque visiteur paie 1$ par animaux.
+                ToolStripInformative.miseAJourToolStrip();
+            }
+        }
     }
 }
