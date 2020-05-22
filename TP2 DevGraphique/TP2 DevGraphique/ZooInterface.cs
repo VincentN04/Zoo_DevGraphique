@@ -58,25 +58,17 @@ namespace TP2_DevGraphique
             }
 
         }
+
+        /// <summary>
+        /// Regarde si le click de la souris se produit autour du joueur
+        /// </summary>
+        /// <param name="e">Emplacement de la souris lors du click</param>
+        /// <returns></returns>
         private bool ProcheHeros(MouseEventArgs e)
         {
             bool EstHeros = false;
-            if (carteJeu1.posVer / 32 == (e.Y - 32) / 32)
-            {
-                EstHeros = true;
-            }
-            if (carteJeu1.posVer / 32 == (e.Y + 32) / 32)
-            {
-                EstHeros = true;
-            }
-            if (carteJeu1.posHor / 32 == (e.X - 32) / 32)
-            {
-                EstHeros = true;
-            }
-            if (carteJeu1.posHor / 32 == (e.X + 32) / 32)
-            {
-                EstHeros = true;
-            }
+
+            //regarde les positions en X
             if (carteJeu1.posHor / 32 == (e.X - 32) / 32 && carteJeu1.posVer / 32 == (e.Y + 32) / 32)
             {
                 EstHeros = true;
@@ -90,6 +82,25 @@ namespace TP2_DevGraphique
                 EstHeros = true;
             }
             if (carteJeu1.posHor / 32 == (e.X + 32) / 32 && carteJeu1.posVer / 32 == (e.Y - 32) / 32)
+            {
+                EstHeros = true;
+            }
+
+
+            //Regarde les positions en croix
+            if (carteJeu1.posHor / 32 == (e.X) / 32 && carteJeu1.posVer / 32 == (e.Y + 32) / 32)
+            {
+                EstHeros = true;
+            }
+            if (carteJeu1.posHor / 32 == (e.X) / 32 && carteJeu1.posVer / 32 == (e.Y - 32) / 32)
+            {
+                EstHeros = true;
+            }
+            if (carteJeu1.posHor / 32 == (e.X - 32) / 32 && carteJeu1.posVer / 32 == (e.Y) / 32)
+            {
+                EstHeros = true;
+            }
+            if (carteJeu1.posHor / 32 == (e.X + 32) / 32 && carteJeu1.posVer / 32 == (e.Y) / 32)
             {
                 EstHeros = true;
             }
