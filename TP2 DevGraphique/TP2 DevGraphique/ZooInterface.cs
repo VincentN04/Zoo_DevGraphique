@@ -58,7 +58,9 @@ namespace TP2_DevGraphique
             }
 
         }
+        
 
+        //Regarde s'il y a un dechet sur le curseur et l'enleve s'il y en a un
         private void VerifieDechet(MouseEventArgs e)
         {
         
@@ -69,6 +71,26 @@ namespace TP2_DevGraphique
             {
                 carteJeu1.MapDechet[x,y] = false;
             }       
+        }
+
+        private void VerifieConcierge(MouseEventArgs e)
+        {
+
+             int x = e.X / 32;
+            int y = e.Y / 32;
+
+            if (x == 26 && y == 5 )
+            {
+
+                ///TEST POUR PROUVER QUE LA PORTE FONCTIONNE
+                CarteJeu.Choix_Animal(e);
+
+
+
+                CarteJeu.Choix_Concierge(e);
+            }  
+
+
         }
 
         /// <summary>
@@ -143,6 +165,7 @@ namespace TP2_DevGraphique
                 {
                     VerifieG(e);
                     VerifieDechet(e);
+                    VerifieConcierge(e);
                 }
                 break;
             case MouseButtons.Right:
