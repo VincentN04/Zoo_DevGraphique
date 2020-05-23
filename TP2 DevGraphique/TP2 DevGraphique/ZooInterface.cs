@@ -67,9 +67,9 @@ namespace TP2_DevGraphique
             int x = e.X / 32;
             int y = e.Y / 32;
 
-            if (carteJeu1.MapDechet[x,y]==true)
+            if (CarteJeu.MapDechet[x,y]==true)
             {
-                carteJeu1.MapDechet[x,y] = false;
+                CarteJeu.MapDechet[x,y] = false;
             }       
         }
 
@@ -81,12 +81,6 @@ namespace TP2_DevGraphique
 
             if (x == 26 && y == 5 )
             {
-
-                ///TEST POUR PROUVER QUE LA PORTE FONCTIONNE
-                CarteJeu.Choix_Animal(e);
-
-
-
                 CarteJeu.Choix_Concierge(e);
             }  
 

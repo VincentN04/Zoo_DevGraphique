@@ -22,9 +22,12 @@ namespace TP2_DevGraphique
 
         public static void miseAJourToolStrip()
         {
+
+            CarteJeu.RefreshTrash();
             labelAnimaux.Text = "Animaux : " + CarteJeu.comptAnimal;
             labelArgent.Text = "Argent : " + Heros.monaieJoueur;
             labelVisiteurs.Text = "Visiteurs : " + CarteJeu.comptVisiteur;
+            labelDechets.Text = "Dechets : " + CarteJeu.comptDechets;
         }
     }
 }

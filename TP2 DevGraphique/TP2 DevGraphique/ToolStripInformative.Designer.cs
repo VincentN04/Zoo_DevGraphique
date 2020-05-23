@@ -37,6 +37,8 @@
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             labelVisiteurs = new System.Windows.Forms.ToolStripLabel();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
+            labelDechets = new System.Windows.Forms.ToolStripLabel();
+            this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -52,7 +54,9 @@
             labelAnimaux,
             this.toolStripSeparator3,
             labelVisiteurs,
-            this.toolStripSeparator4});
+            this.toolStripSeparator4,
+            labelDechets,
+            this.toolStripSeparator5});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(954, 28);
@@ -107,6 +111,18 @@
             this.toolStripSeparator4.Name = "toolStripSeparator4";
             this.toolStripSeparator4.Size = new System.Drawing.Size(6, 28);
             // 
+            // labelDechets
+            // 
+            labelDechets.ForeColor = System.Drawing.Color.White;
+            labelDechets.Name = "labelDechets";
+            labelDechets.Size = new System.Drawing.Size(88, 25);
+            labelDechets.Text = "Dechets :";
+            // 
+            // toolStripSeparator5
+            // 
+            this.toolStripSeparator5.Name = "toolStripSeparator5";
+            this.toolStripSeparator5.Size = new System.Drawing.Size(6, 28);
+            // 
             // ToolStripInformative
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -130,6 +146,8 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
         public System.Windows.Forms.ToolStripLabel labelJour;
+        private static System.Windows.Forms.ToolStripLabel labelDechets;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
         private static System.Windows.Forms.ToolStripLabel labelArgent;
         private static System.Windows.Forms.ToolStripLabel labelAnimaux;
         private static System.Windows.Forms.ToolStripLabel labelVisiteurs;

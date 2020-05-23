@@ -30,7 +30,7 @@ namespace TP2
         public int posHor = 12 * MapPixel;
         public int posVer = 7 * MapPixel;
         public bool[,] MapObstacle = new bool[30, 30];
-        public bool[,] MapDechet = new bool[30, 30];
+        public static bool[,] MapDechet = new bool[30, 30];
         public static Animaux[] RegistreA = new Animaux[20];
         private static Visiteur[] RegistreV = new Visiteur[20];
         private static Concierge[] RegistReG = new Concierge[20];
@@ -44,6 +44,7 @@ namespace TP2
         public static int comptArgent = 100;
         public static int comptVisiteur = 0;
         public static int comptConcierge = 0;
+        public static int comptDechets = 0;
 
         public CarteJeu()
         {
@@ -88,15 +89,15 @@ namespace TP2
             conc.y = y;
            // CarteJeu.RegistreA[compt] = anim;
 
-            //ChoixAnimaux choix = new ChoixAnimaux();
-            //choix.Show();
+            ChoixConcierge choix = new ChoixConcierge();
+            choix.Show();
 
 
         }
         
         
         /// <summary>
-        /// Recois les coordonnees du concierge et fait le menage autour de lui
+        /// Recois les coordonnees du concierge et fait le menage autour de lui, puis change le ToolStrip
         /// </summary>
         /// <param name="x"> int representant la position x du conscierge</param>
         /// <param name="y">int representant la position y du conscierge</param>
@@ -110,7 +111,23 @@ namespace TP2
             MapDechet[x+1,y-1] = false;
             MapDechet[x-1,y+1] = false;
             MapDechet[x-1,y-1] = false;
+        }
 
+        public static void RefreshTrash()
+        {
+
+            comptDechets = 0;
+            for (int i = 0; i < 30; i++)
+            {
+                for (int j = 0; j < 30; j++)
+                {
+                    if (MapDechet[i,j] == true)
+                    {
+                        comptDechets++;
+                    }
+                    
+                }
+            }
         }
 
 
@@ -233,6 +250,12 @@ namespace TP2
         /// <summary>
         /// Initialise le tableau boolean qui servira comme tableau d'obstacle pour le héros
         /// </summary>
+        /// 
+
+        public static void SpawnerConcierge()
+        {
+
+        }
         private void InitializeMapObstacles()
         {
             for(int i = 24; i < 28; i++)
@@ -424,8 +447,7 @@ namespace TP2
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void CarteJeu_Paint(object sender, PaintEventArgs e)
-        {
-
+        {           
             Graphics g = e.Graphics;
             Visiteur V = new Visiteur();
 
@@ -853,7 +875,7 @@ namespace TP2
 
                 }
             }
-
+            ToolStripInformative.miseAJourToolStrip();
         }
 
         /// <summary>
