@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.labelJour = new System.Windows.Forms.ToolStripLabel();
+            labelJour = new System.Windows.Forms.ToolStripLabel();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             labelArgent = new System.Windows.Forms.ToolStripLabel();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
@@ -47,7 +47,7 @@
             this.toolStrip1.BackColor = System.Drawing.Color.DarkOliveGreen;
             this.toolStrip1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.labelJour,
+            labelJour,
             this.toolStripSeparator1,
             labelArgent,
             this.toolStripSeparator2,
@@ -65,10 +65,10 @@
             // 
             // labelJour
             // 
-            this.labelJour.ForeColor = System.Drawing.Color.White;
-            this.labelJour.Name = "labelJour";
-            this.labelJour.Size = new System.Drawing.Size(62, 25);
-            this.labelJour.Text = "Jour : ";
+            labelJour.ForeColor = System.Drawing.Color.White;
+            labelJour.Name = "labelJour";
+            labelJour.Size = new System.Drawing.Size(62, 25);
+            labelJour.Text = "Jour : ";
             // 
             // toolStripSeparator1
             // 
@@ -145,7 +145,7 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
-        public System.Windows.Forms.ToolStripLabel labelJour;
+        public static System.Windows.Forms.ToolStripLabel labelJour;
         private static System.Windows.Forms.ToolStripLabel labelDechets;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
         private static System.Windows.Forms.ToolStripLabel labelArgent;

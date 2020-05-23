@@ -24,10 +24,15 @@ namespace TP2_DevGraphique
         {
 
             CarteJeu.RefreshTrash();
+            //labelJour.Text = "Jour : " + CarteJeu.dateJeu.ToString("yyy/mm/dd");
             labelAnimaux.Text = "Animaux : " + CarteJeu.comptAnimal;
             labelArgent.Text = "Argent : " + Heros.monaieJoueur;
             labelVisiteurs.Text = "Visiteurs : " + CarteJeu.comptVisiteur;
             labelDechets.Text = "Dechets : " + CarteJeu.comptDechets;
+        }
+        public static void miseAJourToolStripJour()
+        {
+            labelJour.Text = "Jour : " + CarteJeu.dateJeu.ToString("yyy/MM/dd");
         }
     }
 }

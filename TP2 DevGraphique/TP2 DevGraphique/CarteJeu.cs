@@ -45,6 +45,8 @@ namespace TP2
         public static int comptVisiteur = 0;
         public static int comptConcierge = 0;
         public static int comptDechets = 0;
+        public static DateTime dateJeu = DateTime.Today;
+        public static int DateFromStart = 0;
 
         public CarteJeu()
         {
@@ -874,7 +876,7 @@ namespace TP2
                     }
 
                 }
-            }
+            }           
             ToolStripInformative.miseAJourToolStrip();
         }
 
@@ -1014,9 +1016,16 @@ namespace TP2
         {
             if(comptVisiteur > 0)
             {
-                Heros.ajoutArgent(comptVisiteur*comptAnimal); //toutes les minutes (60000 ms) chaque visiteur paie 1$ par animaux.
+                Heros.ajoutArgent(comptVisiteur*comptAnimal); //toutes les minutes (60000 ms) chaque visiteur paie 1$ par animaux.               
                 ToolStripInformative.miseAJourToolStrip();
             }
+        }
+
+        private void timer2_Tick(object sender, EventArgs e)
+        {
+            dateJeu = dateJeu.AddDays(1);
+            DateFromStart++;
+            ToolStripInformative.miseAJourToolStripJour();
         }
     }
 }
