@@ -36,3 +36,16 @@ C:\Users\Clément\Documents\GitHub\Zoo_DevGraphique\TP2 DevGraphique\TP2 DevGrap
 C:\Users\Clément\Documents\GitHub\Zoo_DevGraphique\TP2 DevGraphique\TP2 DevGraphique\obj\Debug\TP2 DevGraphique.pdb
 C:\Users\Clément\Documents\GitHub\Zoo_DevGraphique\TP2 DevGraphique\TP2 DevGraphique\obj\Debug\TP2_DevGraphique.ToolStripInformative.resources
 C:\Users\Utilisateur\Documents\GitHub\Zoo_DevGraphique\TP2 DevGraphique\TP2 DevGraphique\obj\Debug\TP2_DevGraphique.ToolStripInformative.resources
+C:\Users\pacop\Documents\GitHub\Zoo_DevGraphique\TP2 DevGraphique\TP2 DevGraphique\bin\Debug\TP2 DevGraphique.exe.config
+C:\Users\pacop\Documents\GitHub\Zoo_DevGraphique\TP2 DevGraphique\TP2 DevGraphique\bin\Debug\TP2 DevGraphique.exe
+C:\Users\pacop\Documents\GitHub\Zoo_DevGraphique\TP2 DevGraphique\TP2 DevGraphique\bin\Debug\TP2 DevGraphique.pdb
+C:\Users\pacop\Documents\GitHub\Zoo_DevGraphique\TP2 DevGraphique\TP2 DevGraphique\obj\Debug\TP2 DevGraphique.csprojAssemblyReference.cache
+C:\Users\pacop\Documents\GitHub\Zoo_DevGraphique\TP2 DevGraphique\TP2 DevGraphique\obj\Debug\TP2_DevGraphique.AnimalnfoWindow.resources
+C:\Users\pacop\Documents\GitHub\Zoo_DevGraphique\TP2 DevGraphique\TP2 DevGraphique\obj\Debug\TP2.CarteJeu.resources
+C:\Users\pacop\Documents\GitHub\Zoo_DevGraphique\TP2 DevGraphique\TP2 DevGraphique\obj\Debug\TP2_DevGraphique.ChoixAnimaux.resources
+C:\Users\pacop\Documents\GitHub\Zoo_DevGraphique\TP2 DevGraphique\TP2 DevGraphique\obj\Debug\TP2_DevGraphique.Properties.Resources.resources
+C:\Users\pacop\Documents\GitHub\Zoo_DevGraphique\TP2 DevGraphique\TP2 DevGraphique\obj\Debug\TP2_DevGraphique.ToolStripInformative.resources
+C:\Users\pacop\Documents\GitHub\Zoo_DevGraphique\TP2 DevGraphique\TP2 DevGraphique\obj\Debug\TP2_DevGraphique.ZooInterface.resources
+C:\Users\pacop\Documents\GitHub\Zoo_DevGraphique\TP2 DevGraphique\TP2 DevGraphique\obj\Debug\TP2 DevGraphique.csproj.GenerateResource.cache
+C:\Users\pacop\Documents\GitHub\Zoo_DevGraphique\TP2 DevGraphique\TP2 DevGraphique\obj\Debug\TP2 DevGraphique.exe
+C:\Users\pacop\Documents\GitHub\Zoo_DevGraphique\TP2 DevGraphique\TP2 DevGraphique\obj\Debug\TP2 DevGraphique.pdb

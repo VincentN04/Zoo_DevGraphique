@@ -547,28 +547,18 @@ namespace TP2
                     g.DrawImage(TestTilesetZoo.TilesetImageGenerator.GetTile(33), 29 * MapPixel, i * MapPixel);
                 }
             }
-
+           
+               // g.DrawImage(TestTilesetZoo.TilesetImageGenerator.GetTile(34), 0 * MapPixel, 20 * MapPixel);
             // Dessine l'eau et le bas
-            for (int i = 5; i < 30; i++)
-            {
-                if (i == 5) // Dessine le barrel
-                {
-                    g.DrawImage(TestTilesetZoo.TilesetImageGenerator.GetTile(34), i * MapPixel, 20 * MapPixel);
-                }
-                else
-                {
-                    g.DrawImage(TestTilesetZoo.TilesetImageGenerator.GetTile(34), i * MapPixel, 20 * MapPixel);
-                }
+            for (int i = 0; i < 30; i++)
+            {   
+                    g.DrawImage(TestTilesetZoo.TilesetImageGenerator.GetTile(34), i * MapPixel, 20 * MapPixel);                
 
                 if (13 < i && i < 17) // Dessine le gazon entre cloture pour les entrées
                 {
                     g.DrawImage(TestTilesetZoo.TilesetImageGenerator.GetTile(1), i * MapPixel, 20 * MapPixel);
 
                 }
-                g.DrawImage(TestTilesetZoo.TilesetImageGenerator.GetTile(34), 1 * MapPixel, 20 * MapPixel);
-                g.DrawImage(TestTilesetZoo.TilesetImageGenerator.GetTile(34), 2 * MapPixel, 20 * MapPixel);
-                g.DrawImage(TestTilesetZoo.TilesetImageGenerator.GetTile(34), 3 * MapPixel, 20 * MapPixel);
-                g.DrawImage(TestTilesetZoo.TilesetImageGenerator.GetTile(34), 4 * MapPixel, 20 * MapPixel);
 
                 // Cloture en bas
                 g.DrawImage(TestTilesetZoo.TilesetImageGenerator.GetTile(33), 13 * MapPixel, 19 * MapPixel);
@@ -705,6 +695,8 @@ namespace TP2
                     }
                 }
                 
+
+                //Mouvements des visiteurs
                 for (int y = 0; y < compt; y++)
                 {
                     int Direction = rand.Next(1, 5);

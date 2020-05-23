@@ -59,6 +59,18 @@ namespace TP2_DevGraphique
 
         }
 
+        private void VerifieDechet(MouseEventArgs e)
+        {
+        
+            int x = e.X / 32;
+            int y = e.Y / 32;
+
+            if (carteJeu1.MapDechet[x,y]=true)
+            {
+                carteJeu1.MapDechet[x,y] = false;
+            }       
+        }
+
         /// <summary>
         /// Regarde si le click de la souris se produit autour du joueur
         /// </summary>
@@ -119,16 +131,18 @@ namespace TP2_DevGraphique
             return base.ProcessCmdKey(ref msg, keyData);
         }
 
+        /// Gere les clicks gauches et les clicks droits
         private void carteJeu1_MouseDown(object sender, MouseEventArgs e)
         {
-        int x = e.X / 32;
-        int y = e.Y / 32;
+        //int x = e.X / 32;
+        //int y = e.Y / 32;
         switch (e.Button)
         {
             case MouseButtons.Left:
                 if (ProcheHeros(e) == true)
                 {
                     VerifieG(e);
+                    VerifieDechet(e);
                 }
                 break;
             case MouseButtons.Right:
