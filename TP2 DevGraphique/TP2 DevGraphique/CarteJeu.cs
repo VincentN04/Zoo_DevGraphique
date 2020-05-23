@@ -375,6 +375,8 @@ namespace TP2
             }
         }
 
+        
+
         /// <summary>
         /// Dessine tout le contenu visuel de l'interface
         /// </summary>
@@ -617,17 +619,18 @@ namespace TP2
                     {
                         case 1:
                             //up
+                            // - donc monte sur l'ecran
                             if (CarteJeu.RegistreA[y].x > 0)
                             {
                                 // Condition pour les obstacles
-                                if (MapObstacle[CarteJeu.RegistreA[y].y , (CarteJeu.RegistreA[y].x - 1)] == false)
+                                if (MapObstacle[CarteJeu.RegistreA[y].x , (CarteJeu.RegistreA[y].y - 1)] == false)
                                 {
                                     if (CarteJeu.RegistreA[y].y > 2 && CarteJeu.RegistreA[y].y < 6 && CarteJeu.RegistreA[y].x > 2 && CarteJeu.RegistreA[y].x < 10 || 
                                         CarteJeu.RegistreA[y].y > 9 && CarteJeu.RegistreA[y].y < 13 && CarteJeu.RegistreA[y].x > 2 && CarteJeu.RegistreA[y].x < 10 ||
                     CarteJeu.RegistreA[y].y > 2 && CarteJeu.RegistreA[y].y < 6 && CarteJeu.RegistreA[y].x > 14 && CarteJeu.RegistreA[y].x < 22 || CarteJeu.RegistreA[y].y > 9 && CarteJeu.RegistreA[y].y < 13 && CarteJeu.RegistreA[y].x > 14 && CarteJeu.RegistreA[y].x < 22)
                                     {
                                         MapObstacle[CarteJeu.RegistreA[y].x, CarteJeu.RegistreA[y].y] = false;
-                                        CarteJeu.RegistreA[y].x = (CarteJeu.RegistreA[y].x - 1);
+                                        CarteJeu.RegistreA[y].y = (CarteJeu.RegistreA[y].y - 1);
                                         MapObstacle[CarteJeu.RegistreA[y].x, CarteJeu.RegistreA[y].y] = true;
                                     }
                                 }
@@ -638,14 +641,16 @@ namespace TP2
                             if (CarteJeu.RegistreA[y].x * MapPixel< 19 * MapPixel)
                             {
                                 // Condition pour les obstacles
-                                if (MapObstacle[CarteJeu.RegistreA[y].y , (CarteJeu.RegistreA[y].x + 1) ] == false)
+                                if (MapObstacle[CarteJeu.RegistreA[y].x , (CarteJeu.RegistreA[y].y + 1) ] == false 
+                                    && !(CarteJeu.RegistreA[y].y + 1 == 6)
+                                    && !(CarteJeu.RegistreA[y].y + 1 == 13))
                                 {
                                     if (CarteJeu.RegistreA[y].y > 2 && CarteJeu.RegistreA[y].y < 6 && CarteJeu.RegistreA[y].x > 2 && CarteJeu.RegistreA[y].x < 10 ||
                                        CarteJeu.RegistreA[y].y > 9 && CarteJeu.RegistreA[y].y < 13 && CarteJeu.RegistreA[y].x > 2 && CarteJeu.RegistreA[y].x < 10 ||
                    CarteJeu.RegistreA[y].y > 2 && CarteJeu.RegistreA[y].y < 6 && CarteJeu.RegistreA[y].x > 14 && CarteJeu.RegistreA[y].x < 22 || CarteJeu.RegistreA[y].y > 9 && CarteJeu.RegistreA[y].y < 13 && CarteJeu.RegistreA[y].x > 14 && CarteJeu.RegistreA[y].x < 22)
                                     {
                                         MapObstacle[CarteJeu.RegistreA[y].x, CarteJeu.RegistreA[y].y] = false;
-                                        CarteJeu.RegistreA[y].x = CarteJeu.RegistreA[y].x + 1;
+                                        CarteJeu.RegistreA[y].y = CarteJeu.RegistreA[y].y +1;
                                         MapObstacle[CarteJeu.RegistreA[y].x, CarteJeu.RegistreA[y].y] = true;
                                     }
                                 }
@@ -657,14 +662,14 @@ namespace TP2
                             if (CarteJeu.RegistreA[y].y > 0)
                             {
                                 // Condition pour les obstacles
-                                if (MapObstacle[CarteJeu.RegistreA[y].y - 1 , (CarteJeu.RegistreA[y].x)] == false)
+                                if (MapObstacle[CarteJeu.RegistreA[y].x + 1 , (CarteJeu.RegistreA[y].y)] == false)
                                 {
                                     if (CarteJeu.RegistreA[y].y > 2 && CarteJeu.RegistreA[y].y < 6 && CarteJeu.RegistreA[y].x > 2 && CarteJeu.RegistreA[y].x < 10 ||
                                        CarteJeu.RegistreA[y].y > 9 && CarteJeu.RegistreA[y].y < 13 && CarteJeu.RegistreA[y].x > 2 && CarteJeu.RegistreA[y].x < 10 ||
                    CarteJeu.RegistreA[y].y > 2 && CarteJeu.RegistreA[y].y < 6 && CarteJeu.RegistreA[y].x > 14 && CarteJeu.RegistreA[y].x < 22 || CarteJeu.RegistreA[y].y > 9 && CarteJeu.RegistreA[y].y < 13 && CarteJeu.RegistreA[y].x > 14 && CarteJeu.RegistreA[y].x < 22)
                                     {
                                         MapObstacle[CarteJeu.RegistreA[y].x, CarteJeu.RegistreA[y].y] = false;
-                                        CarteJeu.RegistreA[y].x = (CarteJeu.RegistreA[y].y - 1);
+                                        CarteJeu.RegistreA[y].x = (CarteJeu.RegistreA[y].x + 1);
                                         MapObstacle[CarteJeu.RegistreA[y].x, CarteJeu.RegistreA[y].y] = true;
                                     }
                                 }
@@ -676,14 +681,14 @@ namespace TP2
                             if (CarteJeu.RegistreA[y].y * MapPixel > 28)
                             {
                                 // Condition pour les obstacles
-                                if (MapObstacle[CarteJeu.RegistreA[y].y + 1 , (CarteJeu.RegistreA[y].x ) ] == false)
+                                if (MapObstacle[CarteJeu.RegistreA[y].x - 1 , (CarteJeu.RegistreA[y].y ) ] == false)
                                 {
                                     if (CarteJeu.RegistreA[y].y > 2 && CarteJeu.RegistreA[y].y < 6 && CarteJeu.RegistreA[y].x > 2 && CarteJeu.RegistreA[y].x < 10 ||
                                        CarteJeu.RegistreA[y].y > 9 && CarteJeu.RegistreA[y].y < 13 && CarteJeu.RegistreA[y].x > 2 && CarteJeu.RegistreA[y].x < 10 ||
                    CarteJeu.RegistreA[y].y > 2 && CarteJeu.RegistreA[y].y < 6 && CarteJeu.RegistreA[y].x > 14 && CarteJeu.RegistreA[y].x < 22 || CarteJeu.RegistreA[y].y > 9 && CarteJeu.RegistreA[y].y < 13 && CarteJeu.RegistreA[y].x > 14 && CarteJeu.RegistreA[y].x < 22)
                                     {
                                         MapObstacle[CarteJeu.RegistreA[y].x, CarteJeu.RegistreA[y].y] = false;
-                                        CarteJeu.RegistreA[y].x = (CarteJeu.RegistreA[y].y + 1);
+                                        CarteJeu.RegistreA[y].x = (CarteJeu.RegistreA[y].x - 1);
                                         MapObstacle[CarteJeu.RegistreA[y].x, CarteJeu.RegistreA[y].y] = true;
                                     }
                                 }
@@ -707,7 +712,7 @@ namespace TP2
                             if (CarteJeu.RegistreV[y].x > 0 && CarteJeu.RegistreV[y].x< 30)
                             {
                                 // Condition pour les obstacles
-                                if (MapObstacle[CarteJeu.RegistreV[y].y, (CarteJeu.RegistreV[y].x - 1)] == false)
+                                if (MapObstacle[CarteJeu.RegistreV[y].x -1, (CarteJeu.RegistreV[y].y)] == false)
                                 {
                                     if (rand.Next(0, 10) == 1)
                                     {
@@ -726,7 +731,7 @@ namespace TP2
                                     {
                                        
                                 }
-                                    else
+                                   else
                                     {
                                         MapObstacle[CarteJeu.RegistreV[y].x, CarteJeu.RegistreV[y].y] = false;
                                         CarteJeu.RegistreV[y].x = (CarteJeu.RegistreV[y].x - 1);
@@ -735,6 +740,7 @@ namespace TP2
                                    
                                    
                                 }
+                              
                             }
                             break;
                         case 2:
@@ -742,7 +748,7 @@ namespace TP2
                             if (CarteJeu.RegistreV[y].x * MapPixel < 19 * MapPixel)
                             {
                                 // Condition pour les obstacles
-                                if (MapObstacle[CarteJeu.RegistreV[y].y, (CarteJeu.RegistreV[y].x + 1)] == false)
+                                if (MapObstacle[CarteJeu.RegistreV[y].x+1, (CarteJeu.RegistreV[y].y)] == false)
                                 {
                                     if (rand.Next(0, 10) == 1)
                                     {
@@ -773,12 +779,16 @@ namespace TP2
 
                             break;
                         case 3:
-                            //up
-                            if (0 < CarteJeu.RegistreV[y].y)
+                            //up                         
+                            if (CarteJeu.RegistreV[y].y > 0)                         
                             {
 
                                 // Condition pour les obstacles
-                                if (MapObstacle[CarteJeu.RegistreV[y].y - 1, (CarteJeu.RegistreV[y].x)] == false)
+                                if (MapObstacle[CarteJeu.RegistreV[y].x, (CarteJeu.RegistreV[y].y - 1)] == false
+                                    && !(CarteJeu.RegistreV[y].x == 6  && CarteJeu.RegistreV[y].y - 1 == 6)
+                                    && !(CarteJeu.RegistreV[y].x == 6  && CarteJeu.RegistreV[y].y - 1 == 13)
+                                    && !(CarteJeu.RegistreV[y].x == 18 && CarteJeu.RegistreV[y].y - 1 == 6)
+                                    && !(CarteJeu.RegistreV[y].x == 18 && CarteJeu.RegistreV[y].y - 1 == 13))
                                 {
                                     if (rand.Next(0, 10) == 1)
                                     {
@@ -813,7 +823,7 @@ namespace TP2
                             if (CarteJeu.RegistreV[y].y < 20)
                             {
                                 // Condition pour les obstacles
-                                if (MapObstacle[CarteJeu.RegistreV[y].y + 1, (CarteJeu.RegistreV[y].x)] == false)
+                                if (MapObstacle[CarteJeu.RegistreV[y].x , (CarteJeu.RegistreV[y].y + 1)] == false )
                                 {
                                     if (rand.Next(0, 10) == 1)
                                     {

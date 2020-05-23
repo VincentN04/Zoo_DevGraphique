@@ -65,7 +65,7 @@ namespace TP2_DevGraphique
             int x = e.X / 32;
             int y = e.Y / 32;
 
-            if (carteJeu1.MapDechet[x,y]=true)
+            if (carteJeu1.MapDechet[x,y]==true)
             {
                 carteJeu1.MapDechet[x,y] = false;
             }       
