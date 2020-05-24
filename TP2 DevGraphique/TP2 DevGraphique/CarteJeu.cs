@@ -887,62 +887,70 @@ namespace TP2
         /// <returns></returns>
         public int EvenementClick(Keys keyData)
         {
-
-            switch (keyData)
+            if (Deplace == true)
             {
-                case Keys.Up:
-                    // Condition pour les extrémités
-                    if (posVer > 0)
-                    {
-                        // Condition pour les obstacles
-                        if (MapObstacle[posHor / MapPixel, (posVer - 32) / MapPixel] == false)
+                switch (keyData)
+                {
+                    case Keys.Up:
+                        // Condition pour les extrémités
+                        if (posVer > 0)
                         {
-                            image = TP2_DevGraphique.Properties.Resources.haut1;
-                            posVer = posVer - 32;
-                            Deplace = false;
-                            Refresh();
+                            // Condition pour les obstacles
+                            if (MapObstacle[posHor / MapPixel, (posVer - 32) / MapPixel] == false)
+                            {
+                                image = TP2_DevGraphique.Properties.Resources.haut1;
+                                posVer = posVer - 32;
+                                Deplace = false;
+                                Refresh();
+                            }
                         }
-                    }
-                    return posVer;
-                case Keys.Down:
-                    if (posVer < 19 * MapPixel)
-                    {
-                        if (MapObstacle[posHor / MapPixel, (posVer + 32) / MapPixel] == false)
+                        return posVer;
+                    case Keys.Down:
+                        if (posVer < 19 * MapPixel)
                         {
-                            image = TP2_DevGraphique.Properties.Resources.bas1;
-                            posVer = posVer + 32;
-                            Deplace = false;
-                            Refresh();
+                            if (MapObstacle[posHor / MapPixel, (posVer + 32) / MapPixel] == false)
+                            {
+                                image = TP2_DevGraphique.Properties.Resources.bas1;
+                                posVer = posVer + 32;
+                                Deplace = false;
+                                Refresh();
+                            }
                         }
-                    }
-                    return posVer;
-                case Keys.Left:
-                    if (posHor > 0)
-                    {
-                        if (MapObstacle[(posHor - 32) / MapPixel, posVer / MapPixel] == false)
+                        return posVer;
+                    case Keys.Left:
+                        if (posHor > 0)
                         {
-                            image = TP2_DevGraphique.Properties.Resources.gauche1;
-                            posHor = posHor - 32;
-                            Deplace = false;
-                            Refresh();
+                            if (MapObstacle[(posHor - 32) / MapPixel, posVer / MapPixel] == false)
+                            {
+                                image = TP2_DevGraphique.Properties.Resources.gauche1;
+                                posHor = posHor - 32;
+                                Deplace = false;
+                                Refresh();
+                            }
                         }
-                    }
-                    return posHor;
-                case Keys.Right:
-                    if (posHor < 28 * MapPixel)
-                    {
-                        if (MapObstacle[(posHor + 32) / MapPixel, posVer / MapPixel] == false)
+                        return posHor;
+                    case Keys.Right:
+                        if (posHor < 28 * MapPixel)
                         {
-                            image = TP2_DevGraphique.Properties.Resources.droite1;
-                            posHor = posHor + 32;
-                            Deplace = false;
-                            Refresh();
+                            if (MapObstacle[(posHor + 32) / MapPixel, posVer / MapPixel] == false)
+                            {
+                                image = TP2_DevGraphique.Properties.Resources.droite1;
+                                posHor = posHor + 32;
+                                Deplace = false;
+                                Refresh();
+                            }
                         }
-                    }
-                    return posHor;
-                default:
-                    return 0;
+                        return posHor;
+                    default:
+                        return 0;
+                }
             }
+            else
+            {
+                return 0;
+            }
+            
+
         }
 
         /// <summary>
@@ -1015,7 +1023,11 @@ namespace TP2
 
 
 
-
+        /// <summary>
+        /// Timer qui permet de prendre l'argent des visiteurs a chaque minute
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void timer1_Tick(object sender, EventArgs e)
         {
             if (comptVisiteur > 0)
@@ -1025,15 +1037,29 @@ namespace TP2
             }
         }
 
+        /// <summary>
+        /// Permet au jeu de bouger tout seul a chaque in game day
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void timer2_Tick(object sender, EventArgs e)
         {
             dateJeu = dateJeu.AddDays(1);
             DateFromStart++;
-            ToolStripInformative.miseAJourToolStripJour();
-            Deplace = true;
+            ToolStripInformative.miseAJourToolStripJour();           
             Refresh();
 
         }
 
+        /// <summary>
+        /// Methode qui mais le deplacement a true, ce qui permet au joueur de bouger avec un petit retard
+        /// Permet de ne pas mettre le jeu en pause lorsque le personnage bouge
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void timer3_Tick(object sender, EventArgs e)
+        {
+            Deplace = true;
+        }
     }
 }
