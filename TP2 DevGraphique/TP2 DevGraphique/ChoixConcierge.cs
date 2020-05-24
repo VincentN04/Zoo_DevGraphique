@@ -17,25 +17,25 @@ namespace TP2_DevGraphique
         {
             InitializeComponent();
         }
+
+
         /// <summary>
         /// Fait apparaitre un concierge lors d'un click
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void BtnConcierge_Click(object sender, EventArgs e)
+        private void pictureBox1_Click(object sender, EventArgs e)
         {
-
-
             ///CHanger le check pour ne pas depasser un certain nombre de concierges et non pas l'argent(20?)
             ///il faudra faire une liste or something for that
-            if (Heros.monaieJoueur >= 0)
+            if (Heros.monaieJoueur >= 2)
             {
-                this.Close();    
-                CarteJeu.SpawnerConcierge();                              
+                this.Close();
+                CarteJeu.SpawnerConcierge();
             }
             else
             {
-                MessageBox.Show("Vous avez atteint le maximum de concierges!");
+                MessageBox.Show("Vous n'avez pas encore assez d'argent pour engager un concierge!");
 
             }
         }
