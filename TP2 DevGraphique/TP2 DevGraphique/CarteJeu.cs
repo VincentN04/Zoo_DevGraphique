@@ -33,7 +33,7 @@ namespace TP2
         public static bool[,] MapDechet = new bool[30, 30];
         public static Animaux[] RegistreA = new Animaux[20];
         private static Visiteur[] RegistreV = new Visiteur[20];
-        private static Concierge[] RegistReG = new Concierge[20];
+        private static Concierge[] RegistreG = new Concierge[20];
         public static int compt = 0;
         public static Boolean Sauter = false;
         //AnimalInfoWindow info = new AnimalInfoWindow();
@@ -256,7 +256,11 @@ namespace TP2
 
         public static void SpawnerConcierge()
         {
-
+            Concierge G = new Concierge();          
+            G.x = 28;
+            G.y = 10;
+            RegistreG[comptConcierge] = G;
+            comptConcierge++;
         }
         private void InitializeMapObstacles()
         {
@@ -677,190 +681,9 @@ namespace TP2
             }
             if (Deplace == true)
             {
-                for (int y = 0; y < compt; y++)
-                {
-                    int Direction = rand.Next(1, 5);
-                    switch (Direction)
-                    {
-                        case 1:
-                            //up
-                            // - donc monte sur l'ecran
-                            if (CarteJeu.RegistreA[y].x > 0)
-                            {
-                                // Condition pour les obstacles
-                                if (MapObstacle[CarteJeu.RegistreA[y].x, (CarteJeu.RegistreA[y].y - 1)] == false)
-                                {
-                                    MapObstacle[CarteJeu.RegistreA[y].x, CarteJeu.RegistreA[y].y] = false;
-                                    CarteJeu.RegistreA[y].y = (CarteJeu.RegistreA[y].y - 1);
-                                    MapObstacle[CarteJeu.RegistreA[y].x, CarteJeu.RegistreA[y].y] = true;
-                                }
-                            }
-                            break;
-                        case 2:
-                            //down
-                            if (CarteJeu.RegistreA[y].x * MapPixel < 19 * MapPixel)
-                            {
-                                // Condition pour les obstacles
-                                if (MapObstacle[CarteJeu.RegistreA[y].x, (CarteJeu.RegistreA[y].y + 1)] == false
-                                    && !(CarteJeu.RegistreA[y].y + 1 == 6)
-                                    && !(CarteJeu.RegistreA[y].y + 1 == 13))
-                                {
-                                    MapObstacle[CarteJeu.RegistreA[y].x, CarteJeu.RegistreA[y].y] = false;
-                                    CarteJeu.RegistreA[y].y = CarteJeu.RegistreA[y].y + 1;
-                                    MapObstacle[CarteJeu.RegistreA[y].x, CarteJeu.RegistreA[y].y] = true;
-                                }
-                            }
-
-                            break;
-                        case 3:
-                            //right
-                            if (CarteJeu.RegistreA[y].y > 0)
-                            {
-                                // Condition pour les obstacles
-                                if (MapObstacle[CarteJeu.RegistreA[y].x + 1, (CarteJeu.RegistreA[y].y)] == false)
-                                {
-                                    MapObstacle[CarteJeu.RegistreA[y].x, CarteJeu.RegistreA[y].y] = false;
-                                    CarteJeu.RegistreA[y].x = (CarteJeu.RegistreA[y].x + 1);
-                                    MapObstacle[CarteJeu.RegistreA[y].x, CarteJeu.RegistreA[y].y] = true;
-                                }
-                            }
-
-                            break;
-                        case 4:
-                            //left
-                            if (CarteJeu.RegistreA[y].y * MapPixel > 28)
-                            {
-                                // Condition pour les obstacles
-                                if (MapObstacle[CarteJeu.RegistreA[y].x - 1, (CarteJeu.RegistreA[y].y)] == false)
-                                {
-
-                                    MapObstacle[CarteJeu.RegistreA[y].x, CarteJeu.RegistreA[y].y] = false;
-                                    CarteJeu.RegistreA[y].x = (CarteJeu.RegistreA[y].x - 1);
-                                    MapObstacle[CarteJeu.RegistreA[y].x, CarteJeu.RegistreA[y].y] = true;
-
-                                }
-                            }
-
-                            break;
-
-
-                    }
-                }
-
-
-                //Mouvements des visiteurs
-                for (int y = 0; y < compt; y++)
-                {
-                    int Direction = rand.Next(1, 5);
-                    switch (Direction)
-                    {
-                        case 1:
-                            //left
-                            if (CarteJeu.RegistreV[y].x > 0 && CarteJeu.RegistreV[y].x < 30)
-                            {
-                                // Condition pour les obstacles
-                                if (MapObstacle[CarteJeu.RegistreV[y].x - 1, (CarteJeu.RegistreV[y].y)] == false)
-                                {
-                                    if (rand.Next(0, 10) == 1)
-                                    {
-                                        g.DrawImage(TestTilesetZoo.TilesetImageGenerator.GetTile(38), CarteJeu.RegistreV[y].x * MapPixel, CarteJeu.RegistreV[y].y * MapPixel);
-                                        MapDechet[CarteJeu.RegistreV[y].x, CarteJeu.RegistreV[y].y] = true;
-                                    }
-                                    else if (dechet == true)
-                                    {
-                                        g.DrawImage(TestTilesetZoo.TilesetImageGenerator.GetTile(0), CarteJeu.RegistreV[y].x * MapPixel, CarteJeu.RegistreV[y].y * MapPixel);
-                                        dechet = false;
-                                    }
-                                    MapObstacle[CarteJeu.RegistreV[y].x, CarteJeu.RegistreV[y].y] = false;
-                                    CarteJeu.RegistreV[y].x = (CarteJeu.RegistreV[y].x - 1);
-                                    MapObstacle[CarteJeu.RegistreV[y].x, CarteJeu.RegistreV[y].y] = true;
-                                }
-
-                            }
-                            break;
-                        case 2:
-                            //right
-                            if (CarteJeu.RegistreV[y].x * MapPixel < 19 * MapPixel)
-                            {
-                                // Condition pour les obstacles
-                                if (MapObstacle[CarteJeu.RegistreV[y].x + 1, (CarteJeu.RegistreV[y].y)] == false)
-                                {
-                                    if (rand.Next(0, 10) == 1)
-                                    {
-                                        g.DrawImage(TestTilesetZoo.TilesetImageGenerator.GetTile(38), CarteJeu.RegistreV[y].x * MapPixel, CarteJeu.RegistreV[y].y * MapPixel);
-                                        MapDechet[CarteJeu.RegistreV[y].x, CarteJeu.RegistreV[y].y] = true;
-                                    }
-                                    else if (dechet == true)
-                                    {
-                                        g.DrawImage(TestTilesetZoo.TilesetImageGenerator.GetTile(0), CarteJeu.RegistreV[y].x * MapPixel, CarteJeu.RegistreV[y].y * MapPixel);
-                                        dechet = false;
-                                    }
-
-                                    MapObstacle[CarteJeu.RegistreV[y].x, CarteJeu.RegistreV[y].y] = false;
-                                    CarteJeu.RegistreV[y].x = CarteJeu.RegistreV[y].x + 1;
-                                    MapObstacle[CarteJeu.RegistreV[y].x, CarteJeu.RegistreV[y].y] = true;
-                                }
-                            }
-
-                            break;
-                        case 3:
-                            //up                         
-                            if (CarteJeu.RegistreV[y].y > 0)
-                            {
-
-                                // Condition pour les obstacles
-                                if (MapObstacle[CarteJeu.RegistreV[y].x, (CarteJeu.RegistreV[y].y - 1)] == false
-                                    && !(CarteJeu.RegistreV[y].x == 6 && CarteJeu.RegistreV[y].y - 1 == 6)
-                                    && !(CarteJeu.RegistreV[y].x == 6 && CarteJeu.RegistreV[y].y - 1 == 13)
-                                    && !(CarteJeu.RegistreV[y].x == 18 && CarteJeu.RegistreV[y].y - 1 == 6)
-                                    && !(CarteJeu.RegistreV[y].x == 18 && CarteJeu.RegistreV[y].y - 1 == 13))
-                                {
-                                    if (rand.Next(0, 10) == 1)
-                                    {
-                                        g.DrawImage(TestTilesetZoo.TilesetImageGenerator.GetTile(38), CarteJeu.RegistreV[y].x * MapPixel, CarteJeu.RegistreV[y].y * MapPixel);
-                                        MapDechet[CarteJeu.RegistreV[y].x, CarteJeu.RegistreV[y].y] = true;
-                                    }
-                                    else if (dechet == true)
-                                    {
-                                        g.DrawImage(TestTilesetZoo.TilesetImageGenerator.GetTile(0), CarteJeu.RegistreV[y].x * MapPixel, CarteJeu.RegistreV[y].y * MapPixel);
-                                        dechet = false;
-                                    }
-
-                                    MapObstacle[CarteJeu.RegistreV[y].x, CarteJeu.RegistreV[y].y] = false;
-                                    CarteJeu.RegistreV[y].y = (CarteJeu.RegistreV[y].y - 1);
-                                    MapObstacle[CarteJeu.RegistreV[y].x, CarteJeu.RegistreV[y].y] = true;
-                                }
-                            }
-
-                            break;
-                        case 4:
-                            //down
-                            if (CarteJeu.RegistreV[y].y < 19)
-                            {
-                                // Condition pour les obstacles
-                                if (MapObstacle[CarteJeu.RegistreV[y].x, (CarteJeu.RegistreV[y].y + 1)] == false)
-                                {
-                                    if (rand.Next(0, 10) == 1)
-                                    {
-                                        g.DrawImage(TestTilesetZoo.TilesetImageGenerator.GetTile(38), CarteJeu.RegistreV[y].x * MapPixel, CarteJeu.RegistreV[y].y * MapPixel);
-                                        MapDechet[CarteJeu.RegistreV[y].x, CarteJeu.RegistreV[y].y] = true;
-                                    }
-                                    else if (dechet == true)
-                                    {
-                                        g.DrawImage(TestTilesetZoo.TilesetImageGenerator.GetTile(0), CarteJeu.RegistreV[y].x * MapPixel, CarteJeu.RegistreV[y].y * MapPixel);
-                                        dechet = false;
-                                    }
-                                    MapObstacle[CarteJeu.RegistreV[y].x, CarteJeu.RegistreV[y].y] = false;
-                                    CarteJeu.RegistreV[y].y = (CarteJeu.RegistreV[y].y + 1);
-                                    MapObstacle[CarteJeu.RegistreV[y].x, CarteJeu.RegistreV[y].y] = true;
-                                }
-                            }
-                            break;
-                    }
-
-                }
-
-
+                MouvementsAnimaux(sender, e, g);
+                MouvementsVisiteurs(sender, e, g);
+                MouvementsConcierge(sender, e, g);
             }
             int nbDechet = 0;
             Sauter = false;
@@ -879,6 +702,281 @@ namespace TP2
             }
             ToolStripInformative.miseAJourToolStrip();
         }
+
+
+        /// <summary>
+        /// Methode qui deplace les animaux
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        /// <param name="g">Les graphiques qui permettent de paint</param>
+        private void MouvementsAnimaux(object sender, PaintEventArgs e, Graphics g)
+        {
+            for (int y = 0; y < compt; y++) //change to comptAnimaux
+            {
+                int Direction = rand.Next(1, 5);
+                switch (Direction)
+                {
+                    case 1:
+                        //up
+                        // - donc monte sur l'ecran
+                        if (CarteJeu.RegistreA[y].x > 0)
+                        {
+                            // Condition pour les obstacles
+                            if (MapObstacle[CarteJeu.RegistreA[y].x, (CarteJeu.RegistreA[y].y - 1)] == false)
+                            {
+                                MapObstacle[CarteJeu.RegistreA[y].x, CarteJeu.RegistreA[y].y] = false;
+                                CarteJeu.RegistreA[y].y = (CarteJeu.RegistreA[y].y - 1);
+                                MapObstacle[CarteJeu.RegistreA[y].x, CarteJeu.RegistreA[y].y] = true;
+                            }
+                        }
+                        break;
+                    case 2:
+                        //down
+                        if (CarteJeu.RegistreA[y].x * MapPixel < 19 * MapPixel)
+                        {
+                            // Condition pour les obstacles
+                            if (MapObstacle[CarteJeu.RegistreA[y].x, (CarteJeu.RegistreA[y].y + 1)] == false
+                                && !(CarteJeu.RegistreA[y].y + 1 == 6)
+                                && !(CarteJeu.RegistreA[y].y + 1 == 13))
+                            {
+                                MapObstacle[CarteJeu.RegistreA[y].x, CarteJeu.RegistreA[y].y] = false;
+                                CarteJeu.RegistreA[y].y = CarteJeu.RegistreA[y].y + 1;
+                                MapObstacle[CarteJeu.RegistreA[y].x, CarteJeu.RegistreA[y].y] = true;
+                            }
+                        }
+
+                        break;
+                    case 3:
+                        //right
+                        if (CarteJeu.RegistreA[y].y > 0)
+                        {
+                            // Condition pour les obstacles
+                            if (MapObstacle[CarteJeu.RegistreA[y].x + 1, (CarteJeu.RegistreA[y].y)] == false)
+                            {
+                                MapObstacle[CarteJeu.RegistreA[y].x, CarteJeu.RegistreA[y].y] = false;
+                                CarteJeu.RegistreA[y].x = (CarteJeu.RegistreA[y].x + 1);
+                                MapObstacle[CarteJeu.RegistreA[y].x, CarteJeu.RegistreA[y].y] = true;
+                            }
+                        }
+
+                        break;
+                    case 4:
+                        //left
+                        if (CarteJeu.RegistreA[y].y * MapPixel > 28)
+                        {
+                            // Condition pour les obstacles
+                            if (MapObstacle[CarteJeu.RegistreA[y].x - 1, (CarteJeu.RegistreA[y].y)] == false)
+                            {
+
+                                MapObstacle[CarteJeu.RegistreA[y].x, CarteJeu.RegistreA[y].y] = false;
+                                CarteJeu.RegistreA[y].x = (CarteJeu.RegistreA[y].x - 1);
+                                MapObstacle[CarteJeu.RegistreA[y].x, CarteJeu.RegistreA[y].y] = true;
+
+                            }
+                        }
+
+                        break;
+
+
+                }
+            }
+        }
+        /// <summary>
+        /// Methode qui deplace les visiteurs
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        /// <param name="g">Les graphiques qui permettent de paint</param>
+        private void MouvementsVisiteurs(object sender, PaintEventArgs e, Graphics g)
+        {
+            for (int y = 0; y < compt; y++)//change to comptVisiteurs
+            {
+                int Direction = rand.Next(1, 5);
+                switch (Direction)
+                {
+                    case 1:
+                        //left
+                        if (CarteJeu.RegistreV[y].x > 0 && CarteJeu.RegistreV[y].x < 30)
+                        {
+                            // Condition pour les obstacles
+                            if (MapObstacle[CarteJeu.RegistreV[y].x - 1, (CarteJeu.RegistreV[y].y)] == false)
+                            {
+                                if (rand.Next(0, 10) == 1)
+                                {
+                                    g.DrawImage(TestTilesetZoo.TilesetImageGenerator.GetTile(38), CarteJeu.RegistreV[y].x * MapPixel, CarteJeu.RegistreV[y].y * MapPixel);
+                                    MapDechet[CarteJeu.RegistreV[y].x, CarteJeu.RegistreV[y].y] = true;
+                                }
+                                else if (dechet == true)
+                                {
+                                    g.DrawImage(TestTilesetZoo.TilesetImageGenerator.GetTile(0), CarteJeu.RegistreV[y].x * MapPixel, CarteJeu.RegistreV[y].y * MapPixel);
+                                    dechet = false;
+                                }
+                                MapObstacle[CarteJeu.RegistreV[y].x, CarteJeu.RegistreV[y].y] = false;
+                                CarteJeu.RegistreV[y].x = (CarteJeu.RegistreV[y].x - 1);
+                                MapObstacle[CarteJeu.RegistreV[y].x, CarteJeu.RegistreV[y].y] = true;
+                            }
+
+                        }
+                        break;
+                    case 2:
+                        //right
+                        if (CarteJeu.RegistreV[y].x * MapPixel < 19 * MapPixel)
+                        {
+                            // Condition pour les obstacles
+                            if (MapObstacle[CarteJeu.RegistreV[y].x + 1, (CarteJeu.RegistreV[y].y)] == false)
+                            {
+                                if (rand.Next(0, 10) == 1)
+                                {
+                                    g.DrawImage(TestTilesetZoo.TilesetImageGenerator.GetTile(38), CarteJeu.RegistreV[y].x * MapPixel, CarteJeu.RegistreV[y].y * MapPixel);
+                                    MapDechet[CarteJeu.RegistreV[y].x, CarteJeu.RegistreV[y].y] = true;
+                                }
+                                else if (dechet == true)
+                                {
+                                    g.DrawImage(TestTilesetZoo.TilesetImageGenerator.GetTile(0), CarteJeu.RegistreV[y].x * MapPixel, CarteJeu.RegistreV[y].y * MapPixel);
+                                    dechet = false;
+                                }
+
+                                MapObstacle[CarteJeu.RegistreV[y].x, CarteJeu.RegistreV[y].y] = false;
+                                CarteJeu.RegistreV[y].x = CarteJeu.RegistreV[y].x + 1;
+                                MapObstacle[CarteJeu.RegistreV[y].x, CarteJeu.RegistreV[y].y] = true;
+                            }
+                        }
+
+                        break;
+                    case 3:
+                        //up                         
+                        if (CarteJeu.RegistreV[y].y > 0)
+                        {
+
+                            // Condition pour les obstacles
+                            if (MapObstacle[CarteJeu.RegistreV[y].x, (CarteJeu.RegistreV[y].y - 1)] == false
+                                && !(CarteJeu.RegistreV[y].x == 6 && CarteJeu.RegistreV[y].y - 1 == 6)
+                                && !(CarteJeu.RegistreV[y].x == 6 && CarteJeu.RegistreV[y].y - 1 == 13)
+                                && !(CarteJeu.RegistreV[y].x == 18 && CarteJeu.RegistreV[y].y - 1 == 6)
+                                && !(CarteJeu.RegistreV[y].x == 18 && CarteJeu.RegistreV[y].y - 1 == 13))
+                            {
+                                if (rand.Next(0, 10) == 1)
+                                {
+                                    g.DrawImage(TestTilesetZoo.TilesetImageGenerator.GetTile(38), CarteJeu.RegistreV[y].x * MapPixel, CarteJeu.RegistreV[y].y * MapPixel);
+                                    MapDechet[CarteJeu.RegistreV[y].x, CarteJeu.RegistreV[y].y] = true;
+                                }
+                                else if (dechet == true)
+                                {
+                                    g.DrawImage(TestTilesetZoo.TilesetImageGenerator.GetTile(0), CarteJeu.RegistreV[y].x * MapPixel, CarteJeu.RegistreV[y].y * MapPixel);
+                                    dechet = false;
+                                }
+
+                                MapObstacle[CarteJeu.RegistreV[y].x, CarteJeu.RegistreV[y].y] = false;
+                                CarteJeu.RegistreV[y].y = (CarteJeu.RegistreV[y].y - 1);
+                                MapObstacle[CarteJeu.RegistreV[y].x, CarteJeu.RegistreV[y].y] = true;
+                            }
+                        }
+
+                        break;
+                    case 4:
+                        //down
+                        if (CarteJeu.RegistreV[y].y < 19)
+                        {
+                            // Condition pour les obstacles
+                            if (MapObstacle[CarteJeu.RegistreV[y].x, (CarteJeu.RegistreV[y].y + 1)] == false)
+                            {
+                                if (rand.Next(0, 10) == 1)
+                                {
+                                    g.DrawImage(TestTilesetZoo.TilesetImageGenerator.GetTile(38), CarteJeu.RegistreV[y].x * MapPixel, CarteJeu.RegistreV[y].y * MapPixel);
+                                    MapDechet[CarteJeu.RegistreV[y].x, CarteJeu.RegistreV[y].y] = true;
+                                }
+                                else if (dechet == true)
+                                {
+                                    g.DrawImage(TestTilesetZoo.TilesetImageGenerator.GetTile(0), CarteJeu.RegistreV[y].x * MapPixel, CarteJeu.RegistreV[y].y * MapPixel);
+                                    dechet = false;
+                                }
+                                MapObstacle[CarteJeu.RegistreV[y].x, CarteJeu.RegistreV[y].y] = false;
+                                CarteJeu.RegistreV[y].y = (CarteJeu.RegistreV[y].y + 1);
+                                MapObstacle[CarteJeu.RegistreV[y].x, CarteJeu.RegistreV[y].y] = true;
+                            }
+                        }
+                        break;
+                }
+
+            }
+        }
+
+        private void MouvementsConcierge(object sender, PaintEventArgs e, Graphics g)
+        {
+            for (int y = 0; y < comptConcierge; y++)
+            {
+                int Direction = rand.Next(1, 5);
+                switch (Direction)
+                {
+                    case 1:
+                        //left
+                        if (CarteJeu.RegistreG[y].x > 0 && CarteJeu.RegistreG[y].x < 30)
+                        {
+                            // Condition pour les obstacles
+                            if (MapObstacle[CarteJeu.RegistreG[y].x - 1, (CarteJeu.RegistreG[y].y)] == false)
+                            {
+                                MapObstacle[CarteJeu.RegistreG[y].x, CarteJeu.RegistreG[y].y] = false;
+                                CarteJeu.RegistreG[y].x = (CarteJeu.RegistreG[y].x - 1);
+                                MapObstacle[CarteJeu.RegistreG[y].x, CarteJeu.RegistreG[y].y] = true;
+                            }
+
+                        }
+                        break;
+                    case 2:
+                        //right
+                        if (CarteJeu.RegistreG[y].x * MapPixel < 19 * MapPixel)
+                        {
+                            // Condition pour les obstacles
+                            if (MapObstacle[CarteJeu.RegistreG[y].x + 1, (CarteJeu.RegistreG[y].y)] == false)
+                            {
+                                MapObstacle[CarteJeu.RegistreG[y].x, CarteJeu.RegistreG[y].y] = false;
+                                CarteJeu.RegistreG[y].x = CarteJeu.RegistreG[y].x + 1;
+                                MapObstacle[CarteJeu.RegistreG[y].x, CarteJeu.RegistreG[y].y] = true;
+                            }
+                        }
+
+                        break;
+                    case 3:
+                        //up                         
+                        if (CarteJeu.RegistreG[y].y > 0)
+                        {
+
+                            // Condition pour les obstacles
+                            if (MapObstacle[CarteJeu.RegistreG[y].x, (CarteJeu.RegistreG[y].y - 1)] == false
+                                && !(CarteJeu.RegistreG[y].x == 6 && CarteJeu.RegistreG[y].y - 1 == 6)
+                                && !(CarteJeu.RegistreG[y].x == 6 && CarteJeu.RegistreG[y].y - 1 == 13)
+                                && !(CarteJeu.RegistreG[y].x == 18 && CarteJeu.RegistreG[y].y - 1 == 6)
+                                && !(CarteJeu.RegistreG[y].x == 18 && CarteJeu.RegistreG[y].y - 1 == 13))
+                            {
+                                MapObstacle[CarteJeu.RegistreG[y].x, CarteJeu.RegistreG[y].y] = false;
+                                CarteJeu.RegistreG[y].y = (CarteJeu.RegistreG[y].y - 1);
+                                MapObstacle[CarteJeu.RegistreG[y].x, CarteJeu.RegistreG[y].y] = true;
+                            }
+                        }
+
+                        break;
+                    case 4:
+                        //down
+                        if (CarteJeu.RegistreG[y].y < 19)
+                        {
+                            // Condition pour les obstacles
+                            if (MapObstacle[CarteJeu.RegistreG[y].x, (CarteJeu.RegistreG[y].y + 1)] == false)
+                            {
+                                MapObstacle[CarteJeu.RegistreG[y].x, CarteJeu.RegistreG[y].y] = false;
+                                CarteJeu.RegistreG[y].y = (CarteJeu.RegistreG[y].y + 1);
+                                MapObstacle[CarteJeu.RegistreG[y].x, CarteJeu.RegistreG[y].y] = true;
+                            }
+                        }
+                        break;
+                }
+                ConciergeMenage(CarteJeu.RegistreG[y].x, CarteJeu.RegistreG[y].y);
+
+            }
+        }
+
+
+
 
         /// <summary>
         /// Prend le data de la méthode ProcessCmdKey et déplace le joueur en conséquence
@@ -1032,28 +1130,27 @@ namespace TP2
         {
             if (comptVisiteur > 0)
             {
-                Heros.ajoutArgent(comptVisiteur * comptAnimal); //toutes les minutes (60000 ms) chaque visiteur paie 1$ par animaux.               
-                ToolStripInformative.miseAJourToolStrip();
+                Heros.ajoutArgent(comptVisiteur * comptAnimal); //toutes les minutes (60000 ms) chaque visiteur paie 1$ par animaux.                              
             }
         }
 
         /// <summary>
-        /// Permet au jeu de bouger tout seul a chaque in game day
+        /// Permet au jeu de bouger tout seul a chaque in game day (821 ms)
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void timer2_Tick(object sender, EventArgs e)
         {
             dateJeu = dateJeu.AddDays(1);
-            DateFromStart++;
-            ToolStripInformative.miseAJourToolStripJour();           
+            DateFromStart++;                      
             Refresh();
+            ToolStripInformative.miseAJourToolStripJour();
 
         }
 
         /// <summary>
         /// Methode qui mais le deplacement a true, ce qui permet au joueur de bouger avec un petit retard
-        /// Permet de ne pas mettre le jeu en pause lorsque le personnage bouge
+        /// Permet de ne pas mettre le jeu en pause lorsque le personnage bouge (100 ms)
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
