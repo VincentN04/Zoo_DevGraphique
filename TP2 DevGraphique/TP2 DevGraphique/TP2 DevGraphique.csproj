@@ -71,6 +71,12 @@
     <Compile Include="ChoixConcierge.Designer.cs">
       <DependentUpon>ChoixConcierge.cs</DependentUpon>
     </Compile>
+    <Compile Include="ListeAnimaux.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ListeAnimaux.Designer.cs">
+      <DependentUpon>ListeAnimaux.cs</DependentUpon>
+    </Compile>
     <Compile Include="Heros.cs" />
     <Compile Include="ToolStripInformative.cs">
       <SubType>UserControl</SubType>
@@ -99,6 +105,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ChoixConcierge.resx">
       <DependentUpon>ChoixConcierge.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListeAnimaux.resx">
+      <DependentUpon>ListeAnimaux.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

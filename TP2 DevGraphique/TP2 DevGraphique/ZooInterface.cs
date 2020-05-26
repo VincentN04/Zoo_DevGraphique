@@ -33,8 +33,9 @@ namespace TP2_DevGraphique
                 if (y > 2 && y < 6 && x > 2 && x < 10 || y > 9 && y < 13 && x > 2 && x < 10 ||
                     y > 2 && y < 6 && x > 14 && x < 22 || y > 9 && y < 13 && x > 14 && x < 22)
                 {
-                    AnimalnfoWindow InfoForm = new AnimalnfoWindow();
-                    InfoForm.Show();
+                    ListeAnimaux ListForm = new ListeAnimaux();
+                    ListForm.UpdateButton();
+                    ListForm.Show();
                 }
             }
         }
