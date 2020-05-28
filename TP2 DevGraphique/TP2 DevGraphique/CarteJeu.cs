@@ -77,6 +77,7 @@ namespace TP2
             int x = e.X / 32;
             int y = e.Y / 32;
             Animaux anim = new Animaux();
+            anim.genererNom();
             anim.x = x;
             anim.y = y;
             CarteJeu.RegistreA[compt] = anim;

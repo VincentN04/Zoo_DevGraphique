@@ -222,5 +222,11 @@
   <ItemGroup>
     <None Include="Resources\CONCIERGE_GB_1.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ListeNomsFeminins.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ListeNomsMasculins.txt" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

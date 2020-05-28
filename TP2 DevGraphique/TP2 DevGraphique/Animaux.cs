@@ -1,20 +1,22 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using System.Windows.Forms.PropertyGridInternal;
 
 namespace TP2
 {
-    
-        
-        public class Animaux
-        {
+
+
+    public class Animaux
+    {
         public int x;
         public int y;
         public int Prix = 0;
         public string Type;
+        public string Nom;
 
         public int X { get; set; }
 
@@ -44,7 +46,7 @@ namespace TP2
 
         public void ResetLicorne()
         {
-            Faim = 180;          
+            Faim = 180;
         }
 
 
@@ -52,7 +54,7 @@ namespace TP2
         {
             Heros.baisseArgent(2);
 
-            if(Type == "Licorne")
+            if (Type == "Licorne")
             {
                 ResetLicorne();
             }
@@ -71,10 +73,22 @@ namespace TP2
         public void HungerDown()
         {
             Faim--;
-            if(Faim == 0)
+            if (Faim == 0)
             {
                 Starve();
             }
+        }
+
+        public void genererNom()
+        {
+            string resource_data = TP2_DevGraphique.Properties.Resources.ListeNomsFeminins;
+            List<string> words = resource_data.Split(new[] { Environment.NewLine }, StringSplitOptions.RemoveEmptyEntries).ToList();
+
+            Random random = new Random();
+            int index = random.Next(words.Count);
+
+            Nom = words[index];
+            Console.WriteLine(Nom);
         }
 
     }
