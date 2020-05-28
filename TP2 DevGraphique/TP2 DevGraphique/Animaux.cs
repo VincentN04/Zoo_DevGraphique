@@ -28,9 +28,54 @@ namespace TP2
 
         public string Vie { get; set; }
 
-        public string Faim { get; set; }
+        public int Faim { get; set; }
 
         public string Enceinte { get; set; }
+
+        public void ResetLion()
+        {
+            Faim = 120;
+        }
+
+        public void ResetMouton()
+        {
+            Faim = 120;
+        }
+
+        public void ResetLicorne()
+        {
+            Faim = 180;          
+        }
+
+
+        public void Starve()
+        {
+            Heros.baisseArgent(2);
+
+            if(Type == "Licorne")
+            {
+                ResetLicorne();
+            }
+
+            else if (Type == "Mouton")
+            {
+                ResetMouton();
+            }
+
+            else
+            {
+                ResetLion();
+            }
+        }
+
+        public void HungerDown()
+        {
+            Faim--;
+            if(Faim == 0)
+            {
+                Starve();
+            }
+        }
 
     }
     

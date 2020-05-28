@@ -10,6 +10,11 @@ using System.Windows.Forms;
 using System.Threading;
 using TP2_DevGraphique;
 
+
+using System.Media;
+using System.IO;
+using System.Reflection;
+
 namespace TP2
 {
     public partial class CarteJeu : UserControl
@@ -79,6 +84,49 @@ namespace TP2
             ChoixAnimaux choix = new ChoixAnimaux();
             choix.Show();
         }
+
+        internal static void Feed(MouseEventArgs e, Animaux a)
+        {
+
+            int x = e.X / 32;
+            int y = e.Y / 32;
+
+            //do something to feed the animals
+            //do something to either check the animals' via the constructor or by using the map
+
+
+            if(a.Type == "Licorne")
+            {
+                SoundPlayer splayer = new SoundPlayer(TP2_DevGraphique.Properties.Resources.licorne);
+                splayer.Play();
+                a.ResetLicorne();
+                Heros.baisseArgent(1);
+            }
+            else if(a.Type == "Mouton")
+            {
+                SoundPlayer splayer = new SoundPlayer(TP2_DevGraphique.Properties.Resources.mouton);
+                splayer.Play();
+                a.ResetMouton();
+                Heros.baisseArgent(1);
+            }
+            else
+            {
+                SoundPlayer splayer = new SoundPlayer(TP2_DevGraphique.Properties.Resources.lion);
+                splayer.Play();
+                a.ResetLion();
+                Heros.baisseArgent(1);
+            }
+
+        }
+        internal static void AnimalMenu(MouseEventArgs e, Animaux a)
+        {          
+            int x = e.X / 32;
+            int y = e.Y / 32;
+   
+            ListeAnimaux listeAni = new ListeAnimaux(a);           
+            listeAni.Show();
+        }
+
 
         //TO DO: Faire fonctionner comme un visiteur en terme de sprite(?) et mouvement
         internal static void Choix_Concierge(MouseEventArgs e)
@@ -1146,6 +1194,16 @@ namespace TP2
             Refresh();
             ToolStripInformative.miseAJourToolStripJour();
 
+            Hunger();
+
+        }
+
+        public void Hunger()
+        {
+            for (int i = 0; i < comptAnimal; i++)
+            {
+                RegistreA[i].HungerDown();
+            }
         }
 
         /// <summary>

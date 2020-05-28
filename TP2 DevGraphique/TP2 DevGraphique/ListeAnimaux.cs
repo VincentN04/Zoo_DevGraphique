@@ -14,8 +14,9 @@ namespace TP2_DevGraphique
     public partial class ListeAnimaux : Form
     {
         public static List<Button> list = new List<Button>();
-        public ListeAnimaux()
+        public ListeAnimaux(Animaux a)
         {
+            list.Clear();
             InitializeComponent();
             list.Add(button1);
             list.Add(button2);
@@ -37,20 +38,22 @@ namespace TP2_DevGraphique
             list.Add(button18);
             list.Add(button19);
             list.Add(button20);
+
+            UpdateButton(a);
            
         }
 
-        public void UpdateButton()
+        public void UpdateButton(Animaux a)
         {
             int comptLic = 0;
             int comptLion = 0;
             int ComptM = 0;
             
-            for(int i = 0; CarteJeu.RegistreA[i] != null; i++)
+            for(int i = 0; i < CarteJeu.comptAnimal; i++)
             {
                 if (CarteJeu.RegistreA[i].Type == "Mouton")
                 {
-                    list[i].BackgroundImage = Image.FromFile("C:/Users/J-P/Documents/GitHub/ZooNumberTwo/Zoo_DevGraphique/TP2 DevGraphique/TP2 DevGraphique/Resources/Dorset_Sheep-icon.png");
+                    list[i].BackgroundImage = TP2_DevGraphique.Properties.Resources.Dorset_Sheep_icon;
                     ComptM++;
                     list[i].Text = "Mouton "+ComptM.ToString();
                     list[i].Refresh();
@@ -59,7 +62,7 @@ namespace TP2_DevGraphique
                 }
                 if (CarteJeu.RegistreA[i].Type == "Lion")
                 {
-                    list[i].BackgroundImage = Image.FromFile("C:/Users/J-P/Documents/GitHub/ZooNumberTwo/Zoo_DevGraphique/TP2 DevGraphique/TP2 DevGraphique/Resources/Male_Lion-icon.png");
+                    list[i].BackgroundImage = TP2_DevGraphique.Properties.Resources.Autumn_Lion_icon;
                     comptLion++;
                     list[i].Text = "Lion " + comptLion.ToString();
                     list[i].Refresh();
@@ -67,13 +70,19 @@ namespace TP2_DevGraphique
                 }
                 if (CarteJeu.RegistreA[i].Type == "Licorne")
                 {
-                    list[i].BackgroundImage = Image.FromFile("C:/Users/J-P/Documents/GitHub/ZooNumberTwo/Zoo_DevGraphique/TP2 DevGraphique/TP2 DevGraphique/Resources/UNICORN.png");
+                    list[i].BackgroundImage = TP2_DevGraphique.Properties.Resources.UNICORN;
                     comptLic++;
                     list[i].Text = "Licorne " + comptLic.ToString();
                     list[i].Refresh();
 
                 }
-                
+
+                if (CarteJeu.RegistreA[i] == a)
+                {
+                    list[i].BackColor = Color.Cyan;
+                }
+
+
             }
 
         }

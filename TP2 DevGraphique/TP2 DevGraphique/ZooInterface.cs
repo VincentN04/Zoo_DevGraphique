@@ -25,7 +25,7 @@ namespace TP2_DevGraphique
         /// </summary>
         /// <param name="e"></param>
         private void VerifieD(MouseEventArgs e)
-        {
+        {/*
             int x = e.X / 32;
             int y = e.Y / 32;
             if (carteJeu1.MapObstacle[x, y] == false)
@@ -37,7 +37,7 @@ namespace TP2_DevGraphique
                     ListForm.UpdateButton();
                     ListForm.Show();
                 }
-            }
+            }*/
         }
 
         /// <summary>
@@ -74,6 +74,53 @@ namespace TP2_DevGraphique
             }       
         }
 
+
+        /// <summary>
+        /// Regarde la table des animaux pour voir si l'un d'eux est sur la case click/
+        /// </summary>
+        /// <param name="e"> endroit click/</param>
+        private void VerifieAnimal(MouseEventArgs e)
+        {
+            int x = e.X / 32;
+            int y = e.Y / 32;
+
+            for (int i = 0; i < CarteJeu.comptAnimal; i++)
+            {
+                if (CarteJeu.RegistreA[i].x == x)
+                {
+                    if (CarteJeu.RegistreA[i].y == y)
+                    {
+                        CarteJeu.AnimalMenu(e, CarteJeu.RegistreA[i]);
+                    }
+                }
+            }
+        }
+
+        /// <summary>
+        /// Regarde la table des animaux pour voir si l'un d'eux est sur la case click/
+        /// </summary>
+        /// <param name="e"> endroit click/</param>
+        private void VerifieAnimalClickGauche(MouseEventArgs e)
+        {
+            int x = e.X / 32;
+            int y = e.Y / 32;
+
+            for (int i = 0; i < CarteJeu.comptAnimal; i++)
+            {
+                if(CarteJeu.RegistreA[i].x==x)
+                {
+                    if (CarteJeu.RegistreA[i].y == y)
+                    {
+                        CarteJeu.Feed(e, CarteJeu.RegistreA[i]);
+                    }
+                }
+            }
+        }
+
+        /// <summary>
+        /// La les coordonn/es du click pour voir s'ils sont les meme que la porte de la maison
+        /// </summary>
+        /// <param name="e"> endroit click/</param>
         private void VerifieConcierge(MouseEventArgs e)
         {
 
@@ -161,13 +208,12 @@ namespace TP2_DevGraphique
                     VerifieG(e);
                     VerifieDechet(e);
                     VerifieConcierge(e);
+                    VerifieAnimalClickGauche(e);
                 }
                 break;
             case MouseButtons.Right:
-                if (ProcheHeros(e) == true)
-                {
                     VerifieD(e);
-                }
+                    VerifieAnimal(e);
                 break;
             }
         }
