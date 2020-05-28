@@ -37,8 +37,8 @@ namespace TP2
         public int posVer = 7 * MapPixel;
         public int posHorC = 26 * MapPixel;
         public int posVerC = 6 * MapPixel;
-        public bool[,] MapObstacle = new bool[30, 30];
-        public static bool[,] MapDechet = new bool[30, 30];
+        public bool[,] MapObstacle = new bool[30, 20];
+        public static bool[,] MapDechet = new bool[30, 20];
         public static Animaux[] RegistreA = new Animaux[20];
         private static Visiteur[] RegistreV = new Visiteur[20];
         private static Concierge[] RegistreG = new Concierge[20];
@@ -157,24 +157,52 @@ namespace TP2
         /// <param name="x"> int representant la position x du conscierge</param>
         /// <param name="y">int representant la position y du conscierge</param>
         private void ConciergeMenage(int x, int y)
-        {
-            MapDechet[x + 1, y] = false;
-            MapDechet[x - 1, y] = false;
-            MapDechet[x, y + 1] = false;
-            MapDechet[x, y - 1] = false;
-            MapDechet[x + 1, y + 1] = false;
-            MapDechet[x + 1, y - 1] = false;
-            MapDechet[x - 1, y + 1] = false;
-            MapDechet[x - 1, y - 1] = false;
+        {           
+            if(x!=0)
+            {
+             MapDechet[x - 1, y] = false;
+            }
+            if(x!=30)    
+            {
+                MapDechet[x + 1, y] = false;
+            }
+            
+           if(y!=19)
+           {
+                 MapDechet[x, y + 1] = false;
+           }
+           
+           if(y!=0)
+           {
+                MapDechet[x, y - 1] = false;
+           }
+
+           if(x!=30 && y!=19)
+           {
+                 MapDechet[x + 1, y + 1] = false;
+           }
+           if(x!=30 && y!=0)
+           {
+                MapDechet[x + 1, y - 1] = false;
+           }
+           if(x!=0 && y!=19)
+           {
+                 MapDechet[x - 1, y + 1] = false;
+           }
+           if(x!=0 && y!=0)
+           {
+                MapDechet[x - 1, y - 1] = false;
+           }           
+            
         }
 
         public static void RefreshTrash()
         {
 
             comptDechets = 0;
-            for (int i = 0; i < 30; i++)
+            for (int i = 0; i < MapDechet.GetLength(0); i++)
             {
-                for (int j = 0; j < 30; j++)
+                for (int j = 0; j < MapDechet.GetLength(1); j++)
                 {
                     if (MapDechet[i, j] == true)
                     {
@@ -347,7 +375,7 @@ namespace TP2
             MapObstacle[28, 11] = true;
 
             // Maison 
-            for (int j = 16; j < 21; j++)
+            for (int j = 16; j < 20; j++)
             {
                 for (int i = 1; i < 5; i++)
                 {
@@ -668,7 +696,13 @@ namespace TP2
             if (achatConcierge)
             {
                 // Dessine le concierge
-                g.DrawImage(concierge, posHorC, posVerC);
+               // g.DrawImage(concierge, posHorC, posVerC);
+                for (int i = 0; i < comptConcierge; i++)
+			    {
+                    g.DrawImage(concierge, RegistreG[i].x *32 , RegistreG[i].y * 32);
+			    }
+
+
             }
 
             // Dessine la cloture droite
@@ -748,9 +782,9 @@ namespace TP2
             }
             int nbDechet = 0;
             Sauter = false;
-            for (int j = 0; j < 30; j++)
+            for (int j = 0; j < MapDechet.GetLength(0); j++)
             {
-                for (int i = 0; i < 30; i++)
+                for (int i = 0; i < MapDechet.GetLength(1); i++)
                 {
                     if (MapDechet[j, i] == true)
                     {
@@ -858,7 +892,7 @@ namespace TP2
                 {
                     case 1:
                         //left
-                        if (CarteJeu.RegistreV[y].x > 0 && CarteJeu.RegistreV[y].x < 30)
+                        if (CarteJeu.RegistreV[y].x > 0 )
                         {
                             // Condition pour les obstacles
                             if (MapObstacle[CarteJeu.RegistreV[y].x - 1, (CarteJeu.RegistreV[y].y)] == false)
@@ -882,7 +916,7 @@ namespace TP2
                         break;
                     case 2:
                         //right
-                        if (CarteJeu.RegistreV[y].x * MapPixel < 19 * MapPixel)
+                        if (CarteJeu.RegistreV[y].x < 28)
                         {
                             // Condition pour les obstacles
                             if (MapObstacle[CarteJeu.RegistreV[y].x + 1, (CarteJeu.RegistreV[y].y)] == false)
@@ -972,43 +1006,49 @@ namespace TP2
                 {
                     case 1:
                         //left
-                        if (CarteJeu.RegistreG[y].x > 0 && CarteJeu.RegistreG[y].x < 30)
+                        if (CarteJeu.RegistreG[y].x > 0)
                         {
                             // Condition pour les obstacles
-                            if (MapObstacle[(posHorC - 32) / MapPixel, posVerC / MapPixel] == false)
+                            if (MapObstacle[CarteJeu.RegistreG[y].x - 1, (CarteJeu.RegistreG[y].y)] == false)
                             {
-
-                                posHorC = posHorC - 32;
-                                Refresh();
+                                MapObstacle[CarteJeu.RegistreG[y].x, CarteJeu.RegistreG[y].y] = false;
+                                CarteJeu.RegistreG[y].x = (CarteJeu.RegistreG[y].x - 1);
+                                MapObstacle[CarteJeu.RegistreG[y].x, CarteJeu.RegistreG[y].y] = true;
                             }
 
                         }
                         break;
                     case 2:
                         //right
-                        if (CarteJeu.RegistreG[y].x * MapPixel < 19 * MapPixel)
+                        if (CarteJeu.RegistreG[y].x < 28)
                         {
                             // Condition pour les obstacles
-                            if (MapObstacle[(posHorC + 32) / MapPixel, posVerC / MapPixel] == false)
+                            if (MapObstacle[CarteJeu.RegistreG[y].x + 1, CarteJeu.RegistreG[y].y] == false)
                             {
-
-                                posVerC = posVerC + 32;
-                                Refresh();
+                                MapObstacle[CarteJeu.RegistreG[y].x, CarteJeu.RegistreG[y].y] = false;
+                                CarteJeu.RegistreG[y].x = CarteJeu.RegistreG[y].x + 1;
+                                MapObstacle[CarteJeu.RegistreG[y].x, CarteJeu.RegistreG[y].y] = true;
                             }
                         }
 
                         break;
                     case 3:
                         //up                         
-                        if (CarteJeu.RegistreG[y].y > 0)
+                       if (CarteJeu.RegistreG[y].y > 0)
                         {
 
                             // Condition pour les obstacles
-                            if (MapObstacle[posHorC / MapPixel, (posVerC - 32) / MapPixel] == false)
+                            // Conditions pour les enclos
+                            if (MapObstacle[CarteJeu.RegistreG[y].x, (CarteJeu.RegistreG[y].y - 1)] == false
+                                && !(CarteJeu.RegistreG[y].x == 6 && CarteJeu.RegistreG[y].y - 1 == 6)
+                                && !(CarteJeu.RegistreG[y].x == 6 && CarteJeu.RegistreG[y].y - 1 == 13)
+                                && !(CarteJeu.RegistreG[y].x == 18 && CarteJeu.RegistreG[y].y - 1 == 6)
+                                && !(CarteJeu.RegistreG[y].x == 18 && CarteJeu.RegistreG[y].y - 1 == 13))
                             {
 
-                                posVerC = posVerC - 32;
-                                Refresh();
+                                MapObstacle[CarteJeu.RegistreG[y].x, CarteJeu.RegistreG[y].y] = false;
+                                CarteJeu.RegistreG[y].y = (CarteJeu.RegistreG[y].y - 1);
+                                MapObstacle[CarteJeu.RegistreG[y].x, CarteJeu.RegistreG[y].y] = true;
                             }
                         }
 
@@ -1018,16 +1058,17 @@ namespace TP2
                         if (CarteJeu.RegistreG[y].y < 19)
                         {
                             // Condition pour les obstacles
-                            if (MapObstacle[posHorC / MapPixel, (posVerC + 32) / MapPixel] == false)
+                            if (MapObstacle[CarteJeu.RegistreG[y].x, CarteJeu.RegistreG[y].y + 1] == false)
                             {
 
-                                posVerC = posVerC + 32;
-                                Refresh();
+                                MapObstacle[CarteJeu.RegistreG[y].x, CarteJeu.RegistreG[y].y] = false;
+                                CarteJeu.RegistreG[y].y = (CarteJeu.RegistreG[y].y + 1);
+                                MapObstacle[CarteJeu.RegistreG[y].x, CarteJeu.RegistreG[y].y] = true;                             
                             }
                         }
                         break;
                 }
-                ConciergeMenage(CarteJeu.RegistreG[y].x, CarteJeu.RegistreG[y].y);
+                ConciergeMenage(CarteJeu.RegistreG[y].x , CarteJeu.RegistreG[y].y);
 
             }
         }
@@ -1166,15 +1207,14 @@ namespace TP2
         internal class Concierge
         {
             static Random rand = new Random();
-            public int x;
-            public int y;
+            public int x = 26 * MapPixel;
+            public int y= 6 * MapPixel;
             public int modele = rand.Next(1, 9);
             public int X { get; set; }
 
             public int Y { get; set; }
 
         }
-
 
 
 
