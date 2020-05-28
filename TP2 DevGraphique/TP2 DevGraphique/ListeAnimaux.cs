@@ -38,7 +38,7 @@ namespace TP2_DevGraphique
             list.Add(button17);
             list.Add(button18);
             list.Add(button19);
-            list.Add(button20);
+            list.Add(button1);
 
             UpdateButton(a);
            
