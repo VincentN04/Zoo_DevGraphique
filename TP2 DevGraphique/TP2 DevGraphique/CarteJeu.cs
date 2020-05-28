@@ -31,9 +31,12 @@ namespace TP2
         Random rand = new Random();
         private const int MapPixel = 32;
         public Image image;
+        public static Image concierge;
         public Rectangle rect;
         public int posHor = 12 * MapPixel;
         public int posVer = 7 * MapPixel;
+        public int posHorC = 26 * MapPixel;
+        public int posVerC = 6 * MapPixel;
         public bool[,] MapObstacle = new bool[30, 30];
         public static bool[,] MapDechet = new bool[30, 30];
         public static Animaux[] RegistreA = new Animaux[20];
@@ -52,6 +55,7 @@ namespace TP2
         public static int comptDechets = 0;
         public static DateTime dateJeu = DateTime.Today;
         public static int DateFromStart = 0;
+        public static bool achatConcierge = false;
 
         public CarteJeu()
         {
@@ -310,6 +314,8 @@ namespace TP2
             G.y = 10;
             RegistreG[comptConcierge] = G;
             comptConcierge++;
+            concierge = TP2_DevGraphique.Properties.Resources.janitor;
+            achatConcierge = true;
         }
         private void InitializeMapObstacles()
         {
@@ -659,6 +665,12 @@ namespace TP2
             // Dessine le héros
             g.DrawImage(image, posHor, posVer);
 
+            if (achatConcierge)
+            {
+                // Dessine le concierge
+                g.DrawImage(concierge, posHorC, posVerC);
+            }
+
             // Dessine la cloture droite
             for (int i = 0; i < 22; i++)
             {
@@ -963,11 +975,11 @@ namespace TP2
                         if (CarteJeu.RegistreG[y].x > 0 && CarteJeu.RegistreG[y].x < 30)
                         {
                             // Condition pour les obstacles
-                            if (MapObstacle[CarteJeu.RegistreG[y].x - 1, (CarteJeu.RegistreG[y].y)] == false)
+                            if (MapObstacle[(posHorC - 32) / MapPixel, posVerC / MapPixel] == false)
                             {
-                                MapObstacle[CarteJeu.RegistreG[y].x, CarteJeu.RegistreG[y].y] = false;
-                                CarteJeu.RegistreG[y].x = (CarteJeu.RegistreG[y].x - 1);
-                                MapObstacle[CarteJeu.RegistreG[y].x, CarteJeu.RegistreG[y].y] = true;
+
+                                posHorC = posHorC - 32;
+                                Refresh();
                             }
 
                         }
@@ -977,11 +989,11 @@ namespace TP2
                         if (CarteJeu.RegistreG[y].x * MapPixel < 19 * MapPixel)
                         {
                             // Condition pour les obstacles
-                            if (MapObstacle[CarteJeu.RegistreG[y].x + 1, (CarteJeu.RegistreG[y].y)] == false)
+                            if (MapObstacle[(posHorC + 32) / MapPixel, posVerC / MapPixel] == false)
                             {
-                                MapObstacle[CarteJeu.RegistreG[y].x, CarteJeu.RegistreG[y].y] = false;
-                                CarteJeu.RegistreG[y].x = CarteJeu.RegistreG[y].x + 1;
-                                MapObstacle[CarteJeu.RegistreG[y].x, CarteJeu.RegistreG[y].y] = true;
+
+                                posVerC = posVerC + 32;
+                                Refresh();
                             }
                         }
 
@@ -992,15 +1004,11 @@ namespace TP2
                         {
 
                             // Condition pour les obstacles
-                            if (MapObstacle[CarteJeu.RegistreG[y].x, (CarteJeu.RegistreG[y].y - 1)] == false
-                                && !(CarteJeu.RegistreG[y].x == 6 && CarteJeu.RegistreG[y].y - 1 == 6)
-                                && !(CarteJeu.RegistreG[y].x == 6 && CarteJeu.RegistreG[y].y - 1 == 13)
-                                && !(CarteJeu.RegistreG[y].x == 18 && CarteJeu.RegistreG[y].y - 1 == 6)
-                                && !(CarteJeu.RegistreG[y].x == 18 && CarteJeu.RegistreG[y].y - 1 == 13))
+                            if (MapObstacle[posHorC / MapPixel, (posVerC - 32) / MapPixel] == false)
                             {
-                                MapObstacle[CarteJeu.RegistreG[y].x, CarteJeu.RegistreG[y].y] = false;
-                                CarteJeu.RegistreG[y].y = (CarteJeu.RegistreG[y].y - 1);
-                                MapObstacle[CarteJeu.RegistreG[y].x, CarteJeu.RegistreG[y].y] = true;
+
+                                posVerC = posVerC - 32;
+                                Refresh();
                             }
                         }
 
@@ -1010,11 +1018,11 @@ namespace TP2
                         if (CarteJeu.RegistreG[y].y < 19)
                         {
                             // Condition pour les obstacles
-                            if (MapObstacle[CarteJeu.RegistreG[y].x, (CarteJeu.RegistreG[y].y + 1)] == false)
+                            if (MapObstacle[posHorC / MapPixel, (posVerC + 32) / MapPixel] == false)
                             {
-                                MapObstacle[CarteJeu.RegistreG[y].x, CarteJeu.RegistreG[y].y] = false;
-                                CarteJeu.RegistreG[y].y = (CarteJeu.RegistreG[y].y + 1);
-                                MapObstacle[CarteJeu.RegistreG[y].x, CarteJeu.RegistreG[y].y] = true;
+
+                                posVerC = posVerC + 32;
+                                Refresh();
                             }
                         }
                         break;
