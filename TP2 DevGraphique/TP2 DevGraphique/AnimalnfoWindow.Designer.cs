@@ -29,9 +29,11 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.LblEnceinte1 = new System.Windows.Forms.Label();
+            this.LblFaim1 = new System.Windows.Forms.Label();
+            this.LblType1 = new System.Windows.Forms.Label();
+            this.LblNom1 = new System.Windows.Forms.Label();
+            this.LblNom = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -39,15 +41,21 @@
             this.LblType = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
+            this.LblSexe1 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.textBox3);
-            this.groupBox1.Controls.Add(this.textBox2);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.LblSexe1);
+            this.groupBox1.Controls.Add(this.label6);
+            this.groupBox1.Controls.Add(this.LblEnceinte1);
+            this.groupBox1.Controls.Add(this.LblFaim1);
+            this.groupBox1.Controls.Add(this.LblType1);
+            this.groupBox1.Controls.Add(this.LblNom1);
+            this.groupBox1.Controls.Add(this.LblNom);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
@@ -59,26 +67,54 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             // 
-            // textBox3
+            // LblEnceinte1
             // 
-            this.textBox3.Location = new System.Drawing.Point(119, 196);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(49, 20);
-            this.textBox3.TabIndex = 8;
+            this.LblEnceinte1.AutoSize = true;
+            this.LblEnceinte1.BackColor = System.Drawing.Color.White;
+            this.LblEnceinte1.Location = new System.Drawing.Point(156, 199);
+            this.LblEnceinte1.Name = "LblEnceinte1";
+            this.LblEnceinte1.Size = new System.Drawing.Size(35, 13);
+            this.LblEnceinte1.TabIndex = 13;
+            this.LblEnceinte1.Text = "label1";
             // 
-            // textBox2
+            // LblFaim1
             // 
-            this.textBox2.Location = new System.Drawing.Point(119, 119);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(49, 20);
-            this.textBox2.TabIndex = 7;
+            this.LblFaim1.AutoSize = true;
+            this.LblFaim1.BackColor = System.Drawing.Color.White;
+            this.LblFaim1.Location = new System.Drawing.Point(156, 139);
+            this.LblFaim1.Name = "LblFaim1";
+            this.LblFaim1.Size = new System.Drawing.Size(35, 13);
+            this.LblFaim1.TabIndex = 12;
+            this.LblFaim1.Text = "label1";
             // 
-            // textBox1
+            // LblType1
             // 
-            this.textBox1.Location = new System.Drawing.Point(119, 47);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 6;
+            this.LblType1.AutoSize = true;
+            this.LblType1.BackColor = System.Drawing.Color.White;
+            this.LblType1.Location = new System.Drawing.Point(156, 85);
+            this.LblType1.Name = "LblType1";
+            this.LblType1.Size = new System.Drawing.Size(35, 13);
+            this.LblType1.TabIndex = 11;
+            this.LblType1.Text = "label1";
+            // 
+            // LblNom1
+            // 
+            this.LblNom1.AutoSize = true;
+            this.LblNom1.BackColor = System.Drawing.Color.White;
+            this.LblNom1.Location = new System.Drawing.Point(156, 37);
+            this.LblNom1.Name = "LblNom1";
+            this.LblNom1.Size = new System.Drawing.Size(35, 13);
+            this.LblNom1.TabIndex = 10;
+            this.LblNom1.Text = "label1";
+            // 
+            // LblNom
+            // 
+            this.LblNom.AutoSize = true;
+            this.LblNom.Location = new System.Drawing.Point(115, 37);
+            this.LblNom.Name = "LblNom";
+            this.LblNom.Size = new System.Drawing.Size(35, 13);
+            this.LblNom.TabIndex = 9;
+            this.LblNom.Text = "Nom :";
             // 
             // label4
             // 
@@ -101,16 +137,16 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(26, 122);
+            this.label2.Location = new System.Drawing.Point(26, 139);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(104, 13);
+            this.label2.Size = new System.Drawing.Size(124, 13);
             this.label2.TabIndex = 2;
-            this.label2.Text = "temps sans manger :";
+            this.label2.Text = "temps avant de manger :";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(26, 199);
+            this.label1.Location = new System.Drawing.Point(95, 199);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(55, 13);
             this.label1.TabIndex = 1;
@@ -119,7 +155,7 @@
             // LblType
             // 
             this.LblType.AutoSize = true;
-            this.LblType.Location = new System.Drawing.Point(26, 50);
+            this.LblType.Location = new System.Drawing.Point(113, 85);
             this.LblType.Name = "LblType";
             this.LblType.Size = new System.Drawing.Size(37, 13);
             this.LblType.TabIndex = 0;
@@ -127,6 +163,7 @@
             // 
             // pictureBox1
             // 
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox1.Location = new System.Drawing.Point(46, 42);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(379, 357);
@@ -143,6 +180,26 @@
             this.button1.TabIndex = 4;
             this.button1.Text = "Fermé";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(19, 16);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(31, 13);
+            this.label6.TabIndex = 15;
+            this.label6.Text = "Sexe";
+            // 
+            // LblSexe1
+            // 
+            this.LblSexe1.AutoSize = true;
+            this.LblSexe1.BackColor = System.Drawing.Color.White;
+            this.LblSexe1.Location = new System.Drawing.Point(18, 37);
+            this.LblSexe1.Name = "LblSexe1";
+            this.LblSexe1.Size = new System.Drawing.Size(35, 13);
+            this.LblSexe1.TabIndex = 16;
+            this.LblSexe1.Text = "label1";
             // 
             // AnimalnfoWindow
             // 
@@ -171,10 +228,14 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label LblType;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label LblEnceinte1;
+        private System.Windows.Forms.Label LblFaim1;
+        private System.Windows.Forms.Label LblType1;
+        private System.Windows.Forms.Label LblNom1;
+        private System.Windows.Forms.Label LblNom;
+        private System.Windows.Forms.Label LblSexe1;
+        private System.Windows.Forms.Label label6;
     }
 }

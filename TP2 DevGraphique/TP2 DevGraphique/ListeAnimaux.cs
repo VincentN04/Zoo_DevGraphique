@@ -13,6 +13,7 @@ namespace TP2_DevGraphique
 {
     public partial class ListeAnimaux : Form
     {
+        
         public static List<Button> list = new List<Button>();
         public ListeAnimaux(Animaux a)
         {
@@ -85,6 +86,26 @@ namespace TP2_DevGraphique
 
             }
 
+        }
+
+        private void button21_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            int compt = 0;
+            AnimalnfoWindow animalinfo = new AnimalnfoWindow();
+            foreach (Button b in list)
+            {
+                if (sender == b)
+                {
+                    animalinfo.UpdateInfo(b,compt);
+                }
+                compt++;
+            }
+            animalinfo.Show();
         }
     }
 }
