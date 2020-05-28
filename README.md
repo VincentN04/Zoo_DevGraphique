@@ -37,6 +37,6 @@
  pour acheter un animal
  - Clic gauche sur un déchet pour le ramasser
  - Clic gauche sur un animal pour le nourrir
-	- L'animal est nourrir lorsqu'on entend son cri
+	- L'animal est nourrit lorsqu'on entend son cri
  - Clic droit sur un animal pour voir la liste des animaux
  - Clic gauche sur la porte de la cabane pour acheter un concierge
